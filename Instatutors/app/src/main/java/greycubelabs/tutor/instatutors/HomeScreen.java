@@ -15,15 +15,12 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void SignUpNav(View view){
-
         Intent intent = new Intent(this, Signup.class);
         startActivity(intent);
-
     }
     public void SignInNav(View view){
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
-
     }
 
 
