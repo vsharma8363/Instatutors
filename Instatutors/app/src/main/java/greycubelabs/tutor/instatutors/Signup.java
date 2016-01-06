@@ -89,6 +89,8 @@ public class Signup extends AppCompatActivity {
                                                 .setValue(FullName.getText().toString());
                                         myFirebaseRef.child("users").child(authData.getUid()).child("email")
                                                 .setValue(Email.getText().toString());
+                                        myFirebaseRef.child("users").child(authData.getUid()).child("IsTutor")
+                                                .setValue("True");
 
                                         Toast.makeText(Signup.this, "Success, your account was made!",
                                                 Toast.LENGTH_SHORT).show();
@@ -115,7 +117,7 @@ public class Signup extends AppCompatActivity {
 
 
     private boolean TextEmpty() {
-        if (Email.getText().length() == 0 && FullName.getText().length() == 0)
+        if (Email.getText().length() == 0 || FullName.getText().length() == 0 || Password.getText().length() == 0)
             return true;
         else
             return false;

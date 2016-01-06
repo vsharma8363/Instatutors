@@ -12,6 +12,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -59,10 +60,17 @@ public class Login extends AppCompatActivity {
                         Login.putExtra("Email", Email.toString());
                         Login.putExtra("Password", Password.toString());
                         startActivity(Login);
+
+                        Toast.makeText(Login.this, "You have been logged in",
+                                Toast.LENGTH_SHORT).show();
                     }
                     @Override
                     public void onAuthenticationError(FirebaseError firebaseError) {
                         //Create alert with firebaseError.getMessage()
+
+                        Toast.makeText(Login.this, "There has been a login error, please change your username and/or password",
+                                Toast.LENGTH_LONG).show();
+
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(Login.this);
                         builder1.setMessage(firebaseError.getMessage());
                         builder1.setCancelable(true);
