@@ -8,6 +8,8 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -29,7 +31,14 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Firebase.setAndroidContext(this);
         myFirebaseRef = new Firebase("https://instatutors.firebaseio.com/");
-        setContentView(R.layout.activity_login);
+        //Remove title bar
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+//Remove notification bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+//set content view AFTER ABOVE sequence (to avoid crash)
+        this.setContentView(R.layout.activity_login);
         Password = (EditText) findViewById(R.id.PasswordLogin);
         Email = (EditText) findViewById(R.id.EmailLogin);
         WarningLogin = (TextView) findViewById(R.id.WarningLogin);

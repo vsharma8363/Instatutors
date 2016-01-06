@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,13 +33,13 @@ public class Signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         Password = (EditText) findViewById(R.id.PasswordSignup);
         ConfirmPassword = (EditText) findViewById(R.id.PasswordConfirmSignup);
-        FullName = (EditText) findViewById(R.id.FullNameSignup);
+        FullName = (EditText) findViewById(R.id.FirstNameSignup);
         Email = (EditText) findViewById(R.id.EmailSignup);
     }
 
     public void SubmitSignup(View view) {
 
-        if (Password.getText().toString().equals(ConfirmPassword.getText().toString()) && !TextEmpty()){
+        if (!TextEmpty() && Password.getText().toString().equals(ConfirmPassword.getText().toString())){
 
             MakeAUser();
 
@@ -121,4 +123,3 @@ public class Signup extends AppCompatActivity {
 
 
 }
-
