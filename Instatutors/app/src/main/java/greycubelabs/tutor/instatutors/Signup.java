@@ -115,7 +115,7 @@ public class Signup extends AppCompatActivity {
 
 
     private boolean TextEmpty() {
-        if (Email.getText().length() == 0 && FullName.getText().length() == 0)
+        if (Email.getText().length() == 0 || FullName.getText().length() == 0 || Password.getText().length() == 0)
             return true;
         else
             return false;
