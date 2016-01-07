@@ -2,11 +2,13 @@ package greycubelabs.tutor.instatutors;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +16,8 @@ import android.widget.Toast;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+
+import java.util.ArrayList;
 
 
 public class Signup extends AppCompatActivity {
@@ -35,6 +39,23 @@ public class Signup extends AppCompatActivity {
         ConfirmPassword = (EditText) findViewById(R.id.PasswordConfirmSignup);
         FullName = (EditText) findViewById(R.id.FirstNameSignup);
         Email = (EditText) findViewById(R.id.EmailSignup);
+        TextView title = (TextView) findViewById(R.id.Title);
+        TextView signup = (TextView) findViewById(R.id.sign_up);
+        TextView name = (TextView) findViewById(R.id.Name);
+        TextView email = (TextView) findViewById(R.id.Email);
+        TextView pass = (TextView) findViewById(R.id.Password);
+        Button b = (Button) findViewById(R.id.Submit);
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Raleway.ttf");
+        Password.setTypeface(type);
+        ConfirmPassword.setTypeface(type);
+        FullName.setTypeface(type);
+        Email.setTypeface(type);
+        title.setTypeface(type);
+        signup.setTypeface(type);
+        name.setTypeface(type);
+        email.setTypeface(type);
+        pass.setTypeface(type);
+        b.setTypeface(type);
     }
 
     public void SubmitSignup(View view) {

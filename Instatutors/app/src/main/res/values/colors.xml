@@ -4,12 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="red">#FF0000</color>
-<<<<<<< HEAD
     <color name="blue">#00668C</color>
-=======
-    <color name="blue">#0000FF</color>
-
->>>>>>> origin/master
     <color name="orange">#FFBA04</color>
     <color name="Black">#000000</color>
 </resources>
