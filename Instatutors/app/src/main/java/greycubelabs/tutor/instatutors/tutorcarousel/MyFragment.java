@@ -15,10 +15,6 @@ import com.bumptech.glide.Glide;
 import java.net.URL;
 
 import greycubelabs.tutor.instatutors.R;
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 
 public class MyFragment extends Fragment {
 	

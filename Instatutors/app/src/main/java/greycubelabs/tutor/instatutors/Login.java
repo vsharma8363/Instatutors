@@ -47,7 +47,7 @@ public class Login extends AppCompatActivity {
         WarningLogin = (TextView) findViewById(R.id.WarningLogin);
         ForgotAccount = (TextView) findViewById(R.id.ForgotAccount);
         TextView title = (TextView) findViewById(R.id.Title);
-        TextView login = (TextView) findViewById(R.id.Login);
+        TextView login = (TextView) findViewById(R.id.login);
         Button b = (Button) findViewById(R.id.LoginSubmit);
         TextView forgotAccount = (TextView) findViewById(R.id.ForgotAccount);
         TextView haveAccount = (TextView) findViewById(R.id.WarningLogin);
