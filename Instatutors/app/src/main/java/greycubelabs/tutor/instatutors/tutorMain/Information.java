@@ -1,9 +1,11 @@
-package com.example.sahaj.tutor;
+package greycubelabs.tutor.instatutors.tutorMain;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+
+import greycubelabs.tutor.instatutors.R;
 
 public class Information extends AppCompatActivity{
     private boolean isTutor;
@@ -13,7 +15,7 @@ public class Information extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_information);
+        setContentView(R.layout.activity_informationSSD);
     }
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
