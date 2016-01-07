@@ -4,12 +4,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,9 +45,21 @@ public class Login extends AppCompatActivity {
         Password = (EditText) findViewById(R.id.PasswordLogin);
         Email = (EditText) findViewById(R.id.EmailLogin);
         WarningLogin = (TextView) findViewById(R.id.WarningLogin);
-        WarningLogin.setTextColor(Color.BLUE);
         ForgotAccount = (TextView) findViewById(R.id.ForgotAccount);
-        ForgotAccount.setTextColor(Color.BLUE);
+        TextView title = (TextView) findViewById(R.id.Title);
+        TextView login = (TextView) findViewById(R.id.Login);
+        Button b = (Button) findViewById(R.id.LoginSubmit);
+        TextView forgotAccount = (TextView) findViewById(R.id.ForgotAccount);
+        TextView haveAccount = (TextView) findViewById(R.id.WarningLogin);
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Raleway.ttf");
+        Password.setTypeface(type);
+        WarningLogin.setTypeface(type);
+        ForgotAccount.setTypeface(type);
+        Email.setTypeface(type);
+        title.setTypeface(type);
+        login.setTypeface(type);
+        forgotAccount.setTypeface(type);
+        haveAccount.setTypeface(type);
         Login = new Intent(this, HomeDashboard.class);
     }
 

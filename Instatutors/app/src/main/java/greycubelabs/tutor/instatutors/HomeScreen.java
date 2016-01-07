@@ -21,7 +21,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void SignUpNav(View view){
-        Intent intent = new Intent(this, Signup.class);
+        Intent intent = new Intent(this, JobSelection.class);
         startActivity(intent);
     }
     public void SignInNav(View view){

@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/Title"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:id="@+id/Divider">
 
                 <View
@@ -75,7 +75,7 @@
                 android:text="Name"
                 android:id="@+id/Name"
                 android:layout_below="@+id/Divider"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textSize="20dp" />
@@ -207,7 +207,7 @@
                 android:id="@+id/Submit"
                 android:layout_below="@id/PasswordConfirmSignup"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/submit"
+                android:background="@drawable/button"
                 android:textColor="#FFFFFF"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
