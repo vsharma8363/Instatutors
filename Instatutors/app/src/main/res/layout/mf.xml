@@ -43,6 +43,7 @@
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:text="Here is where the description goes"
 			android:id="@+id/TextViewTutor"
+			android:textAlignment="center"
 			android:layout_gravity="center_horizontal" />
 
 	</greycubelabs.tutor.instatutors.tutorcarousel.MyLinearLayout>
