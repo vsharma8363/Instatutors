@@ -11,6 +11,7 @@ import greycubelabs.tutor.instatutors.R;
 
 public class MainActivity extends FragmentActivity {
 
+
 	public final static int PAGES = 5;
 
 	// more than 1000 times just in order to test your "infinite" ViewPager :D
