@@ -42,15 +42,13 @@ public class Login extends AppCompatActivity {
 
 //set content view AFTER ABOVE sequence (to avoid crash)
         this.setContentView(R.layout.activity_login);
-        Password = (EditText) findViewById(R.id.PasswordLogin);
-        Email = (EditText) findViewById(R.id.EmailLogin);
-        WarningLogin = (TextView) findViewById(R.id.WarningLogin);
-        ForgotAccount = (TextView) findViewById(R.id.ForgotAccount);
-        TextView title = (TextView) findViewById(R.id.Title);
-        TextView login = (TextView) findViewById(R.id.login);
+        Password = (EditText) findViewById(R.id.LoginPassword);
+        Email = (EditText) findViewById(R.id.LoginEmail);
+        WarningLogin = (TextView) findViewById(R.id.LoginWarning);
+        ForgotAccount = (TextView) findViewById(R.id.LoginForgotAccount);
+        TextView title = (TextView) findViewById(R.id.LoginTitle);
+        TextView login = (TextView) findViewById(R.id.LoginTextDivider);
         Button b = (Button) findViewById(R.id.LoginSubmit);
-        TextView forgotAccount = (TextView) findViewById(R.id.ForgotAccount);
-        TextView haveAccount = (TextView) findViewById(R.id.WarningLogin);
         Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Raleway.ttf");
         Password.setTypeface(type);
         WarningLogin.setTypeface(type);
@@ -58,8 +56,6 @@ public class Login extends AppCompatActivity {
         Email.setTypeface(type);
         title.setTypeface(type);
         login.setTypeface(type);
-        forgotAccount.setTypeface(type);
-        haveAccount.setTypeface(type);
         Login = new Intent(this, HomeDashboard.class);
     }
 
