@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
+import com.firebase.client.Firebase;
+
 import java.net.URL;
 
 import greycubelabs.tutor.instatutors.R;
@@ -41,10 +43,12 @@ public class MyFragment extends Fragment {
 		TextView tv = (TextView) l.findViewById(R.id.text);
 		TextView Content = (TextView) l.findViewById(R.id.TextViewTutor);
 		ImageButton Button = (ImageButton) l.findViewById(R.id.content);
+		Firebase refFB = new Firebase("https://www.instatutors.firebaseio.com/");
+
 
 
 		if(pos == 0){
-			tv.setText("");
+			tv.setText("Bryce");
 			Glide.with(this).load("http://www.greycubelabs.com/instatutors/person1/img.png").into(Button);
 			Button.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
