@@ -6,8 +6,6 @@ import android.support.v4.view.ViewPager;
 
 import com.firebase.client.Firebase;
 
-import greycubelabs.tutor.instatutors.R;
-
 
 public class MainActivity extends FragmentActivity {
 
