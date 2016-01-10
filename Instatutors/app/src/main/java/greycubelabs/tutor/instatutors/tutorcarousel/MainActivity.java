@@ -4,12 +4,17 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
+import com.firebase.client.Firebase;
+
 import greycubelabs.tutor.instatutors.R;
 
+
 public class MainActivity extends FragmentActivity {
+
+
 	public final static int PAGES = 5;
-	// You can choose a bigger number for LOOPS, but you know, nobody will fling
-	// more than 1000 times just in order to test your "infinite" ViewPager :D 
+
+	// more than 1000 times just in order to test your "infinite" ViewPager :D
 	public final static int LOOPS = 1000; 
 	public final static int FIRST_PAGE = PAGES * LOOPS / 2;
 	public final static float BIG_SCALE = 1.0f;
@@ -18,8 +23,9 @@ public class MainActivity extends FragmentActivity {
 	
 	public MyPagerAdapter adapter;
 	public ViewPager pager;
-	
+
 	public void onCreate(Bundle savedInstanceState) {
+		Firebase.setAndroidContext(this);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 

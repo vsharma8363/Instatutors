@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 
 import greycubelabs.tutor.instatutors.R;
 
+
 public class MyPagerAdapter extends FragmentPagerAdapter implements
 		ViewPager.OnPageChangeListener {
 

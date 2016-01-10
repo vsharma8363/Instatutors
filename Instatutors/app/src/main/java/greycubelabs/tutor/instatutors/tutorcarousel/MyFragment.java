@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
+import com.firebase.client.Firebase;
+
 import java.net.URL;
 
 import greycubelabs.tutor.instatutors.R;
@@ -42,10 +44,10 @@ public class MyFragment extends Fragment {
 		TextView Content = (TextView) l.findViewById(R.id.TextViewTutor);
 		ImageButton Button = (ImageButton) l.findViewById(R.id.content);
 
-
 		if(pos == 0){
-			tv.setText("");
+			tv.setText("Bryce Rausch");
 			Glide.with(this).load("http://www.greycubelabs.com/instatutors/person1/img.png").into(Button);
+			Content.setText("Hi, my name's Bryce, I'm a sophmore at Homestead High School in California. I teach Computer Programming, and Physics. Tap on my face to send me an email, and get in touch with me.");
 			Button.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					// Perform action on click
@@ -60,7 +62,7 @@ public class MyFragment extends Fragment {
 		}
 
 		if(pos == 1){
-			tv.setText("Meditative Dreaming");
+			tv.setText("Sahaj Putcha");
 			Button.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					// Perform action on click

@@ -2,11 +2,13 @@ package greycubelabs.tutor.instatutors;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Bundle;
+import android.widget.TextView;
 
 
-public class HomeScreen extends Activity {
+public class StartScreen extends Activity {
 
     // Splash screen timer
     private static int SPLASH_TIME_OUT = 3000;
@@ -15,6 +17,10 @@ public class HomeScreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
+
+        TextView title = (TextView) findViewById(R.id.StartScreenTitle);
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Raleway.ttf");
+        title.setTypeface(type);
 
         new Handler().postDelayed(new Runnable() {
 
@@ -27,7 +33,7 @@ public class HomeScreen extends Activity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(HomeScreen.this, Login.class);
+                Intent i = new Intent(StartScreen.this, Login.class);
                 startActivity(i);
 
                 // close this activity
