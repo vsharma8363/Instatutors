@@ -1,4 +1,4 @@
-package com.example.sahaj.tutor;
+package com.greycublelabs.tutor.instatutors;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

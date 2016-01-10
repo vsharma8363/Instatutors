@@ -1,4 +1,4 @@
-package com.example.sahaj.tutor;
+package com.greycublelabs.tutor.instatutors;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
