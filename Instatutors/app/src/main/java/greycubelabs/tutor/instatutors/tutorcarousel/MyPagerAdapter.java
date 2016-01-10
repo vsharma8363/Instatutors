@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import greycubelabs.tutor.instatutors.R;
 
 
 public class MyPagerAdapter extends FragmentPagerAdapter implements
