@@ -27,7 +27,8 @@
         </activity>
         <activity android:name=".Credentials" >
         </activity>
-
+        <activity android:name=".EmailAction" >
+        </activity>
     </application>
 
 </manifest>
