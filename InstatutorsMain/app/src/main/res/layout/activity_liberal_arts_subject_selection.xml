@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/orange"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="greycubelabs.tutor.instatutors.MathSubjectSelection">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/LiberalArtsSelectionScrollView">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instatutors"
+                android:id="@+id/LiberalArtsSelectionTitle"
+                android:textSize="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LiberalArtsSelectionTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:id="@+id/LiberalArtsSelectionDivider">
+
+                <View
+                    android:layout_weight="40"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#000000"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="15dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Liberal Arts"
+                    android:id="@+id/LiberalArtsSelectionTextDivider"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="25dp"/>
+
+                <View
+                    android:layout_weight="40"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#000000"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="15dp"
+                    />
+
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="US History"
+                android:id="@+id/LiberalArtsSelectionUSHistoryButton"
+                android:layout_below="@id/LiberalArtsSelectionDivider"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/selectionbutton"
+                android:textSize="15dp"
+                android:onClick="usHistorySelection"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="World History"
+                android:id="@+id/LiberalArtsSelectionWorldHistoryButton"
+                android:layout_below="@+id/LiberalArtsSelectionUSHistoryButton"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/selectionbutton"
+                android:textSize="15dp"
+                android:onClick="worldHistorySelection"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Literature"
+                android:id="@+id/LiberalArtsSelectionLiteratureButton"
+                android:layout_below="@+id/LiberalArtsSelectionWorldHistoryButton"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/selectionbutton"
+                android:textSize="15dp"
+                android:onClick="litSelection"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go Back"
+                android:id="@+id/LiberalArtsGoBackButton"
+                android:layout_below="@+id/LiberalArtsSelectionLiteratureButton"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/button"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

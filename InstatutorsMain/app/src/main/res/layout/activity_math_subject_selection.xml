@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/orange"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="greycubelabs.tutor.instatutors.MathSubjectSelection">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/MathSelectionScrollView">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instatutors"
+                android:id="@+id/MathSelectionTitle"
+                android:textSize="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/MathSelectionTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:id="@+id/MathSelectionDivider">
+
+                <View
+                    android:layout_weight="40"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#000000"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="15dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Mathematics"
+                    android:id="@+id/MathSelectionTextDivider"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="25dp"/>
+
+                <View
+                    android:layout_weight="40"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#000000"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="15dp"
+                    />
+
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Algebra"
+                android:id="@+id/MathSelectionAlgebraButton"
+                android:layout_below="@id/MathSelectionDivider"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/selectionbutton"
+                android:textSize="15dp"
+                android:onClick="algebraSelection"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Geometry"
+                android:id="@+id/MathSelectionGeometryButton"
+                android:layout_below="@+id/MathSelectionAlgebraButton"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/selectionbutton"
+                android:textSize="15dp"
+                android:onClick="geometrySelection"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trignometry"
+                android:id="@+id/MathSelectionTrigButton"
+                android:layout_below="@+id/MathSelectionGeometryButton"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/selectionbutton"
+                android:textSize="15dp"
+                android:onClick="trigSelection"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pre-Calculus"
+                android:id="@+id/MathSelectionPrecalcButton"
+                android:layout_below="@+id/MathSelectionTrigButton"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/selectionbutton"
+                android:textSize="15dp"
+                android:onClick="precalcSelection"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AP Calculus"
+                android:id="@+id/MathSelectionAPCalcButton"
+                android:layout_below="@+id/MathSelectionPrecalcButton"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/selectionbutton"
+                android:textSize="15dp"
+                android:onClick="apCalcSelection"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AP Statistics"
+                android:id="@+id/MathSelectionAPStatsButton"
+                android:layout_below="@+id/MathSelectionAPCalcButton"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/selectionbutton"
+                android:textSize="15dp"
+                android:onClick="apStatsSelection"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go Back"
+                android:id="@+id/MathSelectionGoBackButton"
+                android:layout_below="@+id/MathSelectionAPStatsButton"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/button"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

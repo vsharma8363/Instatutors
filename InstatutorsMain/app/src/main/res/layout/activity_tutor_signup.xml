@@ -191,31 +191,6 @@
                 android:layout_below="@id/SignUpPasswordInput"
                 android:layout_marginTop="15dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Skills as a tutor"
-                android:id="@+id/TextViewNextBox"
-                android:textSize="20dp"
-                android:layout_below="@+id/SignUpEmailInput"
-                android:layout_marginTop="20dp" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:ems="10"
-                android:hint="description about skills"
-                android:textColor="#000000"
-                android:textColorHint="@color/orange"
-                android:id="@+id/TutorDescription"
-                android:paddingLeft="10dp"
-                android:paddingTop="7dp"
-                android:paddingBottom="7dp"
-                android:background="@drawable/border"
-                android:layout_below="@id/SignUpPasswordInput"
-                android:layout_marginTop="15dp" />
-
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

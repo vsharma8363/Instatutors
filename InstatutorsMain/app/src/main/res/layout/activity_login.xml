@@ -112,7 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Forgot account credentials?"
+        android:text="Forgot Password?"
         android:id="@+id/LoginForgotAccount"
         android:onClick="ForgotAccount"
         android:layout_below="@+id/LoginSubmit"

@@ -62,43 +62,37 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Input Email"
-        android:id="@+id/ForgotPasswordEmailText"
-        android:layout_marginTop="40dp"
-        android:textSize="20dp"
+        android:text="New Text"
+        android:id="@+id/textView2"
         android:layout_below="@+id/SettingsDivider"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight=".40"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:hint="Email"
-        android:textColor="#000000"
-        android:textColorHint="@color/orange"
-        android:id="@+id/ForgotPasswordEmailInput"
-        android:layout_marginTop="30dp"
-        android:clickable="false"
-        android:paddingLeft="10dp"
-        android:paddingTop="7dp"
-        android:paddingBottom="7dp"
-        android:background="@drawable/border"
-        android:layout_below="@+id/ForgotPasswordEmailText"/>
+        android:id="@+id/editText2"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Continue"
-        android:id="@+id/button3"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/button"
-        android:layout_below="@+id/ForgotPasswordEmailInput"
-        android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        />
+        android:text="New Text"
+        android:id="@+id/textView3"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="126dp" />
+
 
 </RelativeLayout>
