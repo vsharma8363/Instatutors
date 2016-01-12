@@ -65,10 +65,10 @@ public class Signup extends AppCompatActivity {
 
                 MakeAUser();
 
-                Toast.makeText(Signup.this, "You will be redirected to the login page",
+                Toast.makeText(Signup.this, "Choose your subjects",
                         Toast.LENGTH_SHORT).show();
 
-                Intent i = new Intent(this, Login.class);
+                Intent i = new Intent(this, LiberalArtsSubjectSelection.class);
                 startActivity(i);
 
             } else {

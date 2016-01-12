@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class LiberalArtsSubjectSelection extends Activity {
 
@@ -13,17 +14,26 @@ public class LiberalArtsSubjectSelection extends Activity {
     }
 
     public void usHistorySelection(View view){
-        //Intent i = new Intent(this, MathSubjectSelection.class);
-        //startActivity(i);
+        Toast.makeText(this, "You have chosen US history, now choose a science subject",
+                Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(this, ScienceSubjectSelection.class);
+        startActivity(i);
+
     }
 
     public void worldHistorySelection(View view) {
-        //Intent i = new Intent(this, ScienceSubjectSelection.class);
-        //sstartActivity(i);
+        Toast.makeText(this, "You have chosen World History, now choose a science subject",
+                Toast.LENGTH_SHORT).show();
+
+        Intent i = new Intent(this, ScienceSubjectSelection.class);
+        startActivity(i);
     }
 
     public void litSelection(View view) {
-        //Intent i = new Intent(this, ScienceSubjectSelection.class);
-        //startActivity(i);
+        Toast.makeText(this, "You have chosen Literature, now choose a science subject",
+                Toast.LENGTH_SHORT).show();
+
+        Intent i = new Intent(this, ScienceSubjectSelection.class);
+        startActivity(i);
     }
 }

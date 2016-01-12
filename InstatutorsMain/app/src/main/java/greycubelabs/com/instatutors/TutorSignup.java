@@ -40,7 +40,6 @@ public class TutorSignup extends AppCompatActivity {
         ConfirmPassword = (EditText) findViewById(R.id.SignUpPasswordConfirm);
         FullName = (EditText) findViewById(R.id.SignUpFirstNameInput);
         Email = (EditText) findViewById(R.id.SignUpEmailInput);
-        Description = (EditText) findViewById(R.id.TutorDescription);
         TextView title = (TextView) findViewById(R.id.SignUpTitle);
         TextView signup = (TextView) findViewById(R.id.SignUpTextDivider);
         TextView name = (TextView) findViewById(R.id.SignUpNameText);
