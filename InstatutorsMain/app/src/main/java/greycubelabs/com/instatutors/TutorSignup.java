@@ -1,5 +1,6 @@
 package greycubelabs.com.instatutors;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -20,13 +21,12 @@ import com.firebase.client.FirebaseError;
 import java.util.ArrayList;
 
 
-public class TutorSignup extends AppCompatActivity {
+public class TutorSignup extends Activity {
 
     EditText FullName;
     EditText Password;
     EditText ConfirmPassword;
     EditText Email;
-    EditText Description;
     Firebase myFirebaseRef;
     String Result;
 
@@ -40,7 +40,6 @@ public class TutorSignup extends AppCompatActivity {
         ConfirmPassword = (EditText) findViewById(R.id.SignUpPasswordConfirm);
         FullName = (EditText) findViewById(R.id.SignUpFirstNameInput);
         Email = (EditText) findViewById(R.id.SignUpEmailInput);
-        Description = (EditText) findViewById(R.id.TutorDescription);
         TextView title = (TextView) findViewById(R.id.SignUpTitle);
         TextView signup = (TextView) findViewById(R.id.SignUpTextDivider);
         TextView name = (TextView) findViewById(R.id.SignUpNameText);
@@ -114,8 +113,6 @@ public class TutorSignup extends AppCompatActivity {
                                                 .setValue(FullName.getText().toString());
                                         myFirebaseRef.child("users").child(authData.getUid()).child("email")
                                                 .setValue(Email.getText().toString());
-                                        myFirebaseRef.child("users").child(authData.getUid()).child("description")
-                                                .setValue(Description.toString());
 
                                         Toast.makeText(TutorSignup.this, "Success, your account was made!",
                                                 Toast.LENGTH_SHORT).show();

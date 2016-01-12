@@ -1,5 +1,6 @@
 package greycubelabs.com.instatutors;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,7 +23,7 @@ import com.firebase.client.FirebaseError;
 
 import greycubelabs.com.instatutors.tutorcarousel.*;
 
-public class Login extends AppCompatActivity {
+public class Login extends Activity {
 
     EditText Email;
     EditText Password;

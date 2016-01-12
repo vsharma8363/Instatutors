@@ -1,5 +1,6 @@
 package greycubelabs.com.instatutors;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -20,7 +21,7 @@ import com.firebase.client.FirebaseError;
 import java.util.ArrayList;
 
 
-public class Signup extends AppCompatActivity {
+public class Signup extends Activity {
 
     EditText FullName;
     EditText Password;
