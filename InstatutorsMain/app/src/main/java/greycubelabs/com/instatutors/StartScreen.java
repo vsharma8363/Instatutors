@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 public class StartScreen extends Activity {
 
-    // Splash screen timer
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
