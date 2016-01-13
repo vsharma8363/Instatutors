@@ -11,7 +11,7 @@
 <ScrollView
 android:layout_width="fill_parent"
 android:layout_height="fill_parent"
-android:id="@+id/LiberalArtsSelectionScrollView">
+android:id="@+id/LanguagesSelectionScrollView">
 
 <LinearLayout
     android:orientation="vertical"
@@ -22,7 +22,7 @@ android:id="@+id/LiberalArtsSelectionScrollView">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Instatutors"
-        android:id="@+id/LiberalArtsSelectionTitle"
+        android:id="@+id/LanguagesSelectionTitle"
         android:textSize="40dp"
         android:layout_marginTop="12dp"
         android:layout_centerHorizontal="true"
@@ -32,10 +32,10 @@ android:id="@+id/LiberalArtsSelectionScrollView">
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/LanguageSelectionTitle"
+        android:layout_below="@+id/LanguagesSelectionTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:id="@+id/LiberalArtsSelectionDivider">
+        android:id="@+id/LanguagesSelectionDivider">
 
         <View
             android:layout_weight="40"
@@ -53,7 +53,7 @@ android:id="@+id/LiberalArtsSelectionScrollView">
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:text="Languages"
-            android:id="@+id/LiberalArtsSelectionTextDivider"
+            android:id="@+id/LanguagesSelectionTextDivider"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:textSize="25dp"/>
@@ -75,7 +75,7 @@ android:id="@+id/LiberalArtsSelectionScrollView">
         android:layout_height="34dp"
         android:text="Spanish"
         android:id="@+id/LanguageSelectionSpanishButton"
-        android:layout_below="@id/LiberalArtsSelectionDivider"
+        android:layout_below="@id/LanguagesSelectionDivider"
         android:layout_marginTop="50dp"
         android:background="@drawable/selectionbutton"
         android:textSize="15dp"
@@ -85,8 +85,8 @@ android:id="@+id/LiberalArtsSelectionScrollView">
         android:layout_width="match_parent"
         android:layout_height="34dp"
         android:text="French"
-        android:id="@+id/LanguageSelectionFrencButton"
-        android:layout_below="@+id/LanguageSelectionFrenchButton"
+        android:id="@+id/LanguageSelectionFrenchButton"
+        android:layout_below="@+id/LanguageSelectionSpanishButton"
         android:layout_marginTop="50dp"
         android:background="@drawable/selectionbutton"
         android:textSize="15dp"
@@ -96,19 +96,30 @@ android:id="@+id/LiberalArtsSelectionScrollView">
         android:layout_width="365dp"
         android:layout_height="34dp"
         android:text="Japanese"
-        android:id="@+id/LiberalArtsSelectionLiteratureButton"
-        android:layout_below="@+id/LanguageSelectionJapaneseButton"
+        android:id="@+id/LanguageSelectionJapaneseButton"
+        android:layout_below="@+id/LanguageSelectionFrenchButton"
         android:layout_marginTop="50dp"
         android:background="@drawable/selectionbutton"
         android:textSize="15dp"
         android:onClick="japaneseSelection" />
 
     <Button
+        android:layout_width="365dp"
+        android:layout_height="34dp"
+        android:text="Chinese"
+        android:id="@+id/LanguageSelectionChineseButton"
+        android:layout_below="@+id/LanguageSelectionJapaneseButton"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/selectionbutton"
+        android:textSize="15dp"
+        android:onClick="chineseSelection" />
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Go Back"
         android:id="@+id/LanguageGoBackButton"
-        android:layout_below="@+id/LiberalArtsSelectionLiteratureButton"
+        android:layout_below="@+id/LanguageSelectionChineseButton"
         android:layout_marginTop="50dp"
         android:background="@drawable/button"
         android:textSize="20dp"
