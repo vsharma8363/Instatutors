@@ -93,7 +93,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Trignometry"
+                android:text="Algebra 2/Trignometry"
                 android:id="@+id/MathSelectionTrigButton"
                 android:layout_below="@+id/MathSelectionGeometryButton"
                 android:layout_marginTop="50dp"
