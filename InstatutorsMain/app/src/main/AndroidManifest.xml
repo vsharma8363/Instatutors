@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".StartScreen" >
+        <activity android:name=".LanguageSubjectSelection" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,8 +29,7 @@
         </activity>
         <activity android:name=".TutorSignup" >
         </activity>
-        <activity android:name=".LanguageSubjectSelection" >
-        </activity>
+
     </application>
 
 </manifest>
