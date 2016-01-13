@@ -63,6 +63,8 @@ public class MyFragment extends Fragment {
 
 		if(pos == 1){
 			tv.setText("Sahaj Putcha");
+			Glide.with(this).load("http://www.greycubelabs.com/instatutors/person2/img.png").into(Button);
+			Content.setText("Hi, my name's Sahaj, I'm a sophmore at Homestead High School in California. I teach Computer Programming, and Physics. Tap on my face to send me an email, and get in touch with me.");
 			Button.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					// Perform action on click
@@ -73,13 +75,15 @@ public class MyFragment extends Fragment {
 				}
 			});
 
-		}
+	}
 
 		if(pos == 2){
-			tv.setText("Nature Sounds");
-			Button.setOnClickListener(new View.OnClickListener() {
-				public void onClick(View v) {
-					// Perform action on click
+			tv.setText("Nishant Yadav");
+					Glide.with(this).load("http://www.greycubelabs.com/instatutors/person3/img.png").into(Button);
+					Content.setText("Hi, my name's Nishant, I'm a sophmore at Homestead High School in California. I teach Spanish and Math. Tap on my face to send me an email, and get in touch with me.");
+					Button.setOnClickListener(new View.OnClickListener() {
+						public void onClick(View v) {
+
 
 
 				}
@@ -88,31 +92,19 @@ public class MyFragment extends Fragment {
 		}
 
 		if(pos == 3){
-			tv.setText("Ocean Sounds");
+			tv.setText("Michael Chen");
+			Glide.with(this).load("http://www.greycubelabs.com/instatutors/person4/img.png").into(Button);
+			Content.setText("Hi, my name's Michael, I'm a sophmore at Homestead High School in California. I teach Computer Science and Math. Tap on my face to send me an email, and get in touch with me.");
 			Button.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
-					// Perform action on click
 
 
 				}
+
 			});
 
-		}
-
-		if (pos == 4) {
-			tv.setText("Instructions/Info");
-			Button.setOnClickListener(new View.OnClickListener() {
-				public void onClick(View v) {
-					// Perform action on click
-
-
-				}
-			});
 
 		}
-
-
-
 		MyLinearLayout root = (MyLinearLayout) l.findViewById(R.id.root);
 		float scale = this.getArguments().getFloat("scale");
 		root.setScaleBoth(scale);
