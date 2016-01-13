@@ -13,7 +13,6 @@ public class Settings extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        school = (EditText) findViewById();
     }
 
     public void submitChanges(View view) {
