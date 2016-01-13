@@ -74,7 +74,7 @@
                 android:text="Mathematics"
                 android:id="@+id/SubjectSelectionMathButton"
                 android:layout_below="@id/SubjectSelectionDivider"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/selectionbutton"
                 android:textSize="15dp"
                 android:onClick="mathSelection"/>
@@ -85,7 +85,7 @@
                 android:text="Science"
                 android:id="@+id/SubjectSelectionScienceButton"
                 android:layout_below="@+id/SubjectSelectionMathButton"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/selectionbutton"
                 android:textSize="15dp"
                 android:onClick="scienceSelection"/>
@@ -96,7 +96,7 @@
                 android:text="Liberal Arts"
                 android:id="@+id/SubjectSelectionLiberalArtsButton"
                 android:layout_below="@+id/SubjectSelectionScienceButton"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/selectionbutton"
                 android:textSize="15dp"
                 android:onClick="liberalArtsSelection"/>
@@ -104,15 +104,14 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Go Back"
+                android:text="Languages"
                 android:id="@+id/SubjectSelectionGoBackButton"
-                android:layout_below="@+id/SubjectSelectionLiberalArtsButton"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/button"
-                android:textColor="#FFFFFF"
+                android:layout_below="@+id/SubjectSelectionLanguagesButton"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/selectionbutton"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
-                android:textSize="20dp"/>
+                android:textSize="15dp"/>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
