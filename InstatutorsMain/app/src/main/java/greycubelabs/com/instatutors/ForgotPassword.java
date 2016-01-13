@@ -1,5 +1,6 @@
 package greycubelabs.com.instatutors;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.Toast;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
-public class ForgotPassword extends AppCompatActivity {
+public class ForgotPassword extends Activity {
 
     Firebase ref;
     EditText EmailPass;
