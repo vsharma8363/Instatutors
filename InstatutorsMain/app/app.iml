@@ -66,6 +66,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
@@ -75,6 +76,8 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dex" />
 =======
 >>>>>>> origin/master
+=======
+>>>>>>> origin/master
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/bundles" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/coverage-instrumented-classes" />
@@ -82,8 +85,11 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dex-cache" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars" />
@@ -96,6 +102,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/ndk" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/pre-dexed" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/proguard" />
@@ -108,10 +115,14 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/proguard" />
 >>>>>>> Stashed changes
 >>>>>>> origin/master
+=======
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/ndk" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/pre-dexed" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/proguard" />
+>>>>>>> origin/master
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
@@ -119,8 +130,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="recyclerview-v7-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-23.1.1" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="glide-3.6.1" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="firebase-client-android-2.5.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="design-23.1.1" level="project" />
