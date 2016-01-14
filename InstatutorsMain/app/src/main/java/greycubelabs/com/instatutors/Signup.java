@@ -20,6 +20,8 @@ import com.firebase.client.FirebaseError;
 
 import java.util.ArrayList;
 
+import greycubelabs.com.instatutors.tutorcarousel.MainActivity;
+
 
 public class Signup extends Activity {
 
@@ -69,7 +71,7 @@ public class Signup extends Activity {
                 Toast.makeText(Signup.this, "Choose your subjects",
                         Toast.LENGTH_SHORT).show();
 
-                Intent i = new Intent(this, LiberalArtsSubjectSelection.class);
+                Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
 
             } else {

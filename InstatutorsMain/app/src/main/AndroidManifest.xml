@@ -16,13 +16,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".StartScreen" >
+        <activity android:name=".LanguageSubjectSelection" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".SignupJobs"></activity>
         <activity android:name=".Signup" ></activity>
         <activity android:name=".Login" ></activity>
@@ -33,6 +34,15 @@
         <activity android:name=".ScienceSubjectSelection"></activity>
         <activity android:name=".Settings"></activity>
         <activity android:name=".ForgotPassword"></activity>
+=======
+        <activity android:name=".Signup" >
+        </activity>
+        <activity android:name=".Login" >
+        </activity>
+        <activity android:name=".TutorSignup" >
+        </activity>
+
+>>>>>>> origin/master
     </application>
 
 </manifest>
