@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ public class Login extends Activity {
     TextView ForgotAccount;
     Intent Login;
     Firebase myFirebaseRef;
+    TextView FailedLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class Login extends Activity {
 //set content view AFTER ABOVE sequence (to avoid crash)
         this.setContentView(R.layout.activity_login);
         Password = (EditText) findViewById(R.id.LoginPassword);
+        FailedLogin = (TextView) findViewById(R.id.LoginFailLabel);
         Email = (EditText) findViewById(R.id.LoginEmail);
         WarningLogin = (TextView) findViewById(R.id.LoginWarning);
         ForgotAccount = (TextView) findViewById(R.id.LoginForgotAccount);
@@ -86,7 +89,7 @@ public class Login extends Activity {
                     public void onAuthenticationError(FirebaseError firebaseError) {
                         //Create alert with firebaseError.getMessage()
 
-                        Toast.makeText(Login.this, "There has been a login error, please change your username and/or password",
+                        /*Toast.makeText(Login.this, "There has been a login error, please change your username and/or password",
                                 Toast.LENGTH_LONG).show();
 
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(Login.this);
@@ -97,10 +100,18 @@ public class Login extends Activity {
                                     public void onClick(DialogInterface dialog, int id) {
                                         dialog.cancel();
                                     }
-                                });
+                                });*/
+                        failedLogin();
                     }
 
                 });
+    }
+
+    public void failedLogin() {
+        FailedLogin.setVisibility(View.VISIBLE);
+        Drawable d = getDrawable(R.drawable.failedborder);
+        Email.setBackground(d);
+        Password.setBackground(d);
     }
 
     public void NoAccount(View view){

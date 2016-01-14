@@ -62,6 +62,17 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email or password is invalid"
+        android:id="@+id/LoginFailLabel"
+        android:layout_below="@+id/LoginDivider"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:visibility="invisible"
+        android:textColor="@color/red" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,8 +80,8 @@
         android:ems="10"
         android:hint="Email"
         android:id="@+id/LoginEmail"
-        android:layout_below="@id/LoginDivider"
-        android:layout_marginTop="50dp"
+        android:layout_below="@id/LoginFailLabel"
+        android:layout_marginTop="15dp"
         android:paddingLeft="10dp"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
@@ -86,7 +97,7 @@
         android:hint="Password"
         android:id="@+id/LoginPassword"
         android:layout_below="@+id/LoginEmail"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:paddingLeft="10dp"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"

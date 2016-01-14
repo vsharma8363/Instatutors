@@ -2,13 +2,8 @@ package greycubelabs.com.instatutors;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,14 +13,12 @@ import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
-import java.util.ArrayList;
-
 import greycubelabs.com.instatutors.tutorcarousel.MainActivity;
 
 
 public class Signup extends Activity {
 
-    EditText FullName;
+    EditText FirstName, LastName;
     EditText Password;
     EditText ConfirmPassword;
     EditText Email;
@@ -40,7 +33,8 @@ public class Signup extends Activity {
         setContentView(R.layout.activity_signup);
         Password = (EditText) findViewById(R.id.SignUpPasswordInput);
         ConfirmPassword = (EditText) findViewById(R.id.SignUpPasswordConfirm);
-        FullName = (EditText) findViewById(R.id.SignUpFirstNameInput);
+        FirstName = (EditText) findViewById(R.id.SignUpFirstNameInput);
+        LastName = (EditText) findViewById(R.id.SignUpLastNameInput);
         Email = (EditText) findViewById(R.id.SignUpEmailInput);
         TextView title = (TextView) findViewById(R.id.SignUpTitle);
         TextView signup = (TextView) findViewById(R.id.SignUpTextDivider);
@@ -64,7 +58,7 @@ public class Signup extends Activity {
     public void SubmitSignup(View view) {
 
 
-            if (!TextEmpty() && Password.getText().toString().equals(ConfirmPassword.getText().toString())) {
+            if (!valid() && Password.getText().toString().equals(ConfirmPassword.getText().toString())) {
 
                 MakeAUser();
 
@@ -112,7 +106,7 @@ public class Signup extends Activity {
                                     public void onAuthenticated(AuthData authData) {
 
                                         myFirebaseRef.child("users").child(authData.getUid()).child("full_name")
-                                                .setValue(FullName.getText().toString());
+                                                .setValue(FirstName.getText().toString() + " " + LastName.getText().toString());
                                         myFirebaseRef.child("users").child(authData.getUid()).child("email")
                                                 .setValue(Email.getText().toString());
 
@@ -138,13 +132,35 @@ public class Signup extends Activity {
                 });
     }
 
+//65-90 97-122
 
-
-    private boolean TextEmpty() {
-        if (Email.getText().length() == 0 || FullName.getText().length() == 0 || Password.getText().length() == 0)
+    private boolean valid() {
+        if (Email.getText().length() == 0 || FirstName.getText().length() == 0 || LastName.getText().length() == 0 || Password.getText().length() == 0)
             return true;
-        else
-            return false;
+
+        String first = FirstName.getText().toString();
+        String last = LastName.getText().toString();
+        String pass = Password.getText().toString();
+
+        for (int i = 0; i < FirstName.getText().length(); i++) {
+            if (!(first.charAt(i) >= 65 && first.charAt(i) <= 90 || first.charAt(i) >= 97 && first.charAt(i) <= 122)) {
+                return true;
+            }
+        }
+
+        for (int i = 0; i < LastName.getText().length(); i++) {
+            if (!(last.charAt(i) >= 65 && last.charAt(i) <= 90 || last.charAt(i) >= 97 && last.charAt(i) <= 122)) {
+                return true;
+            }
+        }
+
+        for (int i = 0; i < Password.getText().length(); i++) {
+            if (!(pass.charAt(i) >= 65 && pass.charAt(i) <= 90 || pass.charAt(i) >= 97 && pass.charAt(i) <= 122)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 
