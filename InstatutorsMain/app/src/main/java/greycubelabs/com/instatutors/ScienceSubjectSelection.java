@@ -2,11 +2,15 @@ package greycubelabs.com.instatutors;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class ScienceSubjectSelection extends Activity {
+
+    private boolean phys = false, chem = false, bio = false, cs = false;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,29 +18,58 @@ public class ScienceSubjectSelection extends Activity {
     }
 
     public void physicsSelection(View view){
-        Toast.makeText(this, "You have chosen Physics, now choose a math subject",
-                Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(this, MathSubjectSelection.class);
-        startActivity(i);
+        phys = !phys;
+        if (phys) {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectedbutton);
+            b.setBackground(d);
+        } else {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectionbutton);
+            b.setBackground(d);
+        }
     }
 
     public void chemistrySelection(View view){
-        Toast.makeText(this, "You have chosen Chemistry, now choose a math subject",
-                Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(this, MathSubjectSelection.class);
-        startActivity(i);
+        chem = !chem;
+        if (chem) {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectedbutton);
+            b.setBackground(d);
+        } else {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectionbutton);
+            b.setBackground(d);
+        }
     }
 
     public void biologySelection(View view){
-        Toast.makeText(this, "You have chosen Biology, now choose a math subject",
-                Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(this, MathSubjectSelection.class);
-        startActivity(i);
+        bio = !bio;
+        if (bio) {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectedbutton);
+            b.setBackground(d);
+        } else {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectionbutton);
+            b.setBackground(d);
+        }
     }
 
     public void csSelection(View view){
-        Toast.makeText(this, "You have chosen Computer Science, now choose a math subject",
-                Toast.LENGTH_SHORT).show();
+        cs = !cs;
+        if (cs) {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectedbutton);
+            b.setBackground(d);
+        } else {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectionbutton);
+            b.setBackground(d);
+        }
+    }
+
+    public void nextSelection(View view) {
         Intent i = new Intent(this, MathSubjectSelection.class);
         startActivity(i);
     }

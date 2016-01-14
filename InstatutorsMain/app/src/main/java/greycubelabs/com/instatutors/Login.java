@@ -52,13 +52,13 @@ public class Login extends Activity {
         TextView title = (TextView) findViewById(R.id.LoginTitle);
         TextView login = (TextView) findViewById(R.id.LoginTextDivider);
         Button b = (Button) findViewById(R.id.LoginSubmit);
-        Typeface type = Typeface.createFromAsset(getAssets(),"Raleway.ttf");
+        /*Typeface type = Typeface.createFromAsset(getAssets(),"Raleway.ttf");
         Password.setTypeface(type);
         WarningLogin.setTypeface(type);
         ForgotAccount.setTypeface(type);
         Email.setTypeface(type);
         title.setTypeface(type);
-        login.setTypeface(type);
+        login.setTypeface(type);*/
     }
 
     public void SubmitLogin(View view) {
@@ -104,7 +104,7 @@ public class Login extends Activity {
     }
 
     public void NoAccount(View view){
-        Intent i = new Intent(this, Signup.class);
+        Intent i = new Intent(this, SignupJobs.class);
         startActivity(i);
     }
 

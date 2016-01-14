@@ -16,6 +16,5 @@ public class Settings extends Activity{
     }
 
     public void submitChanges(View view) {
-
     }
 }

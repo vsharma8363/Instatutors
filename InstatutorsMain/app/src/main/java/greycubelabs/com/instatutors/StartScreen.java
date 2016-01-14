@@ -11,17 +11,32 @@ import android.widget.TextView;
 
 public class StartScreen extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_screen);
-    }
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            // TODO Auto-generated method stub
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_start_screen);
 
-    public void StartService(View view){
-        Intent i = new Intent(this, SignupJobs.class);
-        startActivity(i);
-    }
+            Thread timerThread = new Thread(){
+                public void run(){
+                    try{
+                        sleep(3000);
+                    }catch(InterruptedException e){
+                        e.printStackTrace();
+                    }finally{
+                        Intent intent = new Intent(StartScreen.this,Login.class);
+                        startActivity(intent);
+                    }
+                }
+            };
+            timerThread.start();
+        }
 
-
+        @Override
+        protected void onPause() {
+            // TODO Auto-generated method stub
+            super.onPause();
+            finish();
+        }
 
 }

@@ -104,10 +104,24 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Go Back"
-                android:id="@+id/LiberalArtsGoBackButton"
+                android:text="Continue"
+                android:id="@+id/LiberalArtsContinueButton"
                 android:layout_below="@+id/LiberalArtsSelectionLiteratureButton"
                 android:layout_marginTop="50dp"
+                android:background="@drawable/button"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:onClick="nextSelection"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go Back"
+                android:id="@+id/LiberalArtsGoBackButton"
+                android:layout_below="@+id/LiberalArtsContinueButton"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/button"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"

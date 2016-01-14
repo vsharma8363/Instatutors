@@ -137,10 +137,24 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Go Back"
-                android:id="@+id/MathSelectionGoBackButton"
+                android:text="Continue"
+                android:id="@+id/MathSelectionContinueButton"
                 android:layout_below="@+id/MathSelectionAPStatsButton"
                 android:layout_marginTop="50dp"
+                android:background="@drawable/button"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:onClick="nextSelection"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go Back"
+                android:id="@+id/MathSelectionGoBackButton"
+                android:layout_below="@+id/MathSelectionContinueButton"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/button"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"

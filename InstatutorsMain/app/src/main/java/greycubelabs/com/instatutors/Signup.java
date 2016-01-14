@@ -46,7 +46,7 @@ public class Signup extends Activity {
         TextView email = (TextView) findViewById(R.id.SignUpNameEmail);
         TextView pass = (TextView) findViewById(R.id.SignUpNamePassword);
         Button b = (Button) findViewById(R.id.SignUpSubmit);
-        Typeface type = Typeface.createFromAsset(getAssets(),"Raleway.ttf");
+        /*Typeface type = Typeface.createFromAsset(getAssets(),"Raleway.ttf");
         Password.setTypeface(type);
         ConfirmPassword.setTypeface(type);
         FullName.setTypeface(type);
@@ -56,7 +56,7 @@ public class Signup extends Activity {
         name.setTypeface(type);
         email.setTypeface(type);
         pass.setTypeface(type);
-        b.setTypeface(type);
+        b.setTypeface(type);*/
     }
 
     public void SubmitSignup(View view) {

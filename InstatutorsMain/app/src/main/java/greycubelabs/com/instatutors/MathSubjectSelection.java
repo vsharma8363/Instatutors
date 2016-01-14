@@ -2,13 +2,17 @@ package greycubelabs.com.instatutors;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import greycubelabs.com.instatutors.tutorcarousel.MainActivity;
 
 public class MathSubjectSelection extends Activity {
+
+    private boolean algebra = false, geo = false, trig = false, precalc = false, calc = false, stats = false;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,43 +20,84 @@ public class MathSubjectSelection extends Activity {
     }
 
     public void algebraSelection(View view){
-        Toast.makeText(this, "You have chosen Algebra, you will now be redirected to the login page, a tutor will contact you soon",
-                Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(this, Login.class);
-        startActivity(i);
+        algebra = !algebra;
+        if (algebra) {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectedbutton);
+            b.setBackground(d);
+        } else {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectionbutton);
+            b.setBackground(d);
+        }
     }
 
     public void geometrySelection(View view){
-        Toast.makeText(this, "You have chosen Geometry, you will now be redirected to the login page, a tutor will contact you soon",
-                Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(this, Login.class);
-        startActivity(i);
+        geo = !geo;
+        if (geo) {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectedbutton);
+            b.setBackground(d);
+        } else {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectionbutton);
+            b.setBackground(d);
+        }
     }
 
     public void trigSelection(View view){
-        Toast.makeText(this, "You have chosen Trigonometry, you will now be redirected to the login page, a tutor will contact you soon",
-                Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(this, Login.class);
-        startActivity(i);
+        trig = !trig;
+        if (trig) {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectedbutton);
+            b.setBackground(d);
+        } else {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectionbutton);
+            b.setBackground(d);
+        }
     }
 
     public void precalcSelection(View view){
-        Toast.makeText(this, "You have chosen Pre-Calculus, you will now be redirected to the login page, a tutor will contact you soon",
-                Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(this, Login.class);
-        startActivity(i);
+        precalc = !precalc;
+        if (precalc) {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectedbutton);
+            b.setBackground(d);
+        } else {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectionbutton);
+            b.setBackground(d);
+        }
     }
 
     public void apCalcSelection(View view){
-        Toast.makeText(this, "You have chosen AP Calculus, you will now be redirected to the login page, a tutor will contact you soon",
-                Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(this, Login.class);
-        startActivity(i);
+        calc = !calc;
+        if (calc) {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectedbutton);
+            b.setBackground(d);
+        } else {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectionbutton);
+            b.setBackground(d);
+        }
     }
 
     public void apStatsSelection(View view){
-        Toast.makeText(this, "You have chosen AP Statistics, you will now be redirected to the login page, a tutor will contact you soon",
-                Toast.LENGTH_SHORT).show();
+        stats = !stats;
+        if (stats) {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectedbutton);
+            b.setBackground(d);
+        } else {
+            Button b = (Button)view;
+            Drawable d = getDrawable(R.drawable.selectionbutton);
+            b.setBackground(d);
+        }
+    }
+
+    public void nextSelection(View view) {
         Intent i = new Intent(this, Login.class);
         startActivity(i);
     }
