@@ -1,9 +1,13 @@
 package greycubelabs.com.instatutors.tutorcarousel;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +15,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.firebase.client.Firebase;
 
@@ -19,7 +25,8 @@ import java.net.URL;
 import greycubelabs.com.instatutors.R;
 
 public class MyFragment extends Fragment {
-	
+
+
 	public static Fragment newInstance(MainActivity context, int pos, 
 			float scale)
 	{
@@ -46,14 +53,13 @@ public class MyFragment extends Fragment {
 
 		if(pos == 0){
 			tv.setText("Bryce Rausch");
-			Glide.with(this).load("http://www.greycubelabs.com/instatutors/person1/img.png").into(Button);
+		Button.setImageResource(R.drawable.goku);
 			Content.setText("Hi, my name's Bryce, I'm a junior at Homestead High School in California. I teach Computer Programming, and Physics. Tap on my face to send me an email, and get in touch with me.");
 			Button.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					// Perform action on click
 
-
-
+					EmailSomeone();
 					// currentContext.startActivity(activityChangeIntent);
 
 				}
@@ -63,14 +69,13 @@ public class MyFragment extends Fragment {
 
 		if(pos == 1){
 			tv.setText("Sahaj Putcha");
-			Glide.with(this).load("http://www.greycubelabs.com/instatutors/person2/img.png").into(Button);
+		Button.setImageResource(R.drawable.mario);
 			Content.setText("Hi, my name's Sahaj, I'm a sophmore at Homestead High School in California. I teach Computer Programming, and Physics. Tap on my face to send me an email, and get in touch with me.");
 			Button.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					// Perform action on click
-
-
-					// currentContext.startActivity(activityChangeIntent);
+						// currentContext.startActivity(activityChangeIntent);
+					EmailSomeone();
 
 				}
 			});
@@ -79,11 +84,12 @@ public class MyFragment extends Fragment {
 
 		if(pos == 2){
 			tv.setText("Nishant Yadav");
-					Glide.with(this).load("http://www.greycubelabs.com/instatutors/person3/img.png").into(Button);
+		Button.setImageResource(R.drawable.fett);
 					Content.setText("Hi, my name's Nishant, I'm a sophmore at Homestead High School in California. I teach Spanish and Math. Tap on my face to send me an email, and get in touch with me.");
 					Button.setOnClickListener(new View.OnClickListener() {
 						public void onClick(View v) {
 
+							EmailSomeone();
 
 
 				}
@@ -93,11 +99,44 @@ public class MyFragment extends Fragment {
 
 		if(pos == 3){
 			tv.setText("Michael Chen");
-			Glide.with(this).load("http://www.greycubelabs.com/instatutors/person4/img.png").into(Button);
+		Button.setImageResource(R.drawable.goku);
 			Content.setText("Hi, my name's Michael, I'm a sophmore at Homestead High School in California. I teach Computer Science and Math. Tap on my face to send me an email, and get in touch with me.");
 			Button.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
+					EmailSomeone();
 
+
+				}
+
+			});
+
+
+		}
+
+		if(pos == 4){
+			tv.setText("Jonathan Abigyan");
+			Button.setImageResource(R.drawable.fett);
+			Content.setText("Hi, my name's John, I'm a sophmore at Homestead High School in California. I teach Computer Algorithms and Science. Tap on my face to send me an email, and get in touch with me.");
+			Button.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					EmailSomeone();
+
+
+				}
+
+			});
+
+
+		}
+
+		if(pos == 5){
+			tv.setText("Bruce Wayne");
+			Button.setImageResource(R.drawable.mario);
+			Content.setText("Hi, my name's Bruce, I'm a Senior at Homestead High School in California. I teach Computer Science and Martial Arts. Tap on my face to send me an email, and get in touch with me.");
+			Button.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+
+					EmailSomeone();
 
 				}
 
@@ -111,4 +150,21 @@ public class MyFragment extends Fragment {
 		
 		return l;
 	}
+
+	public void EmailSomeone(){
+		Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+				"mailto", "viksurf@gmail.com", null));
+		emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Someone wants you as a tutor");
+		startActivity(Intent.createChooser(emailIntent, "send email and email when you are free to tutor him, he wants to be a tutor"));
+
+		Context context = getContext();
+		CharSequence text = "An email message has been sent to this tutor with your contact information, they will get in touch within a few days";
+		int duration = Toast.LENGTH_LONG;
+
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();
+
+	}
+
+
 }

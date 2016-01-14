@@ -65,7 +65,7 @@ public class Signup extends Activity {
                 Toast.makeText(Signup.this, "Choose your subjects",
                         Toast.LENGTH_SHORT).show();
 
-                Intent i = new Intent(this, MainActivity.class);
+                Intent i = new Intent(this, LiberalArtsSubjectSelection.class);
                 startActivity(i);
 
             } else {

@@ -66,6 +66,8 @@ public class Login extends Activity {
 
     public void SubmitLogin(View view) {
 
+        startScreen();
+
         myFirebaseRef.authWithPassword(Email.getText().toString(),
                 Password.getText().toString(), new Firebase.AuthResultHandler() {
 
@@ -80,7 +82,6 @@ public class Login extends Activity {
 
 
 
-                        startScreen();
 
 
 

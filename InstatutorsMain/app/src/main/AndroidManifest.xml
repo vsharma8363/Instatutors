@@ -23,16 +23,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupJobs"></activity>
-        <activity android:name=".Signup" ></activity>
-        <activity android:name=".Login" ></activity>
-        <activity android:name=".TutorSignup" ></activity>
-        <activity android:name=".LanguageSubjectSelection" ></activity>
-        <activity android:name=".LiberalArtsSubjectSelection"></activity>
-        <activity android:name=".MathSubjectSelection"></activity>
-        <activity android:name=".ScienceSubjectSelection"></activity>
-        <activity android:name=".Settings"></activity>
-        <activity android:name=".ForgotPassword"></activity>
+        <activity android:name=".SignupJobs" />
+        <activity android:name=".tutorcarousel.MainActivity" />
+        <activity android:name=".Signup" />
+        <activity android:name=".Login" />
+        <activity android:name=".TutorSignup" />
+        <activity android:name=".LanguageSubjectSelection" />
+        <activity android:name=".LiberalArtsSubjectSelection" />
+        <activity android:name=".MathSubjectSelection" />
+        <activity android:name=".ScienceSubjectSelection" />
+        <activity android:name=".Settings" />
+        <activity android:name=".ForgotPassword" />
     </application>
 
 </manifest>
