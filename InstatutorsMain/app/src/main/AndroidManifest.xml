@@ -31,6 +31,8 @@
         <activity android:name=".LanguageSubjectSelection" />
         <activity android:name=".LiberalArtsSubjectSelection" />
         <activity android:name=".MathSubjectSelection" />
+        <activity android:name=".navbar.Information" />
+        <activity android:name=".navbar.SideBar" />
         <activity android:name=".ScienceSubjectSelection" />
         <activity android:name=".Settings" />
         <activity android:name=".ForgotPassword" />
