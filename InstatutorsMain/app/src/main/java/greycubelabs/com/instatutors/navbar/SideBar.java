@@ -57,7 +57,7 @@ public class SideBar extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.side_bar, menu);
+        getMenuInflater().inflate(R.menu.activity_side_bar_drawer, menu);
         return true;
     }
 
