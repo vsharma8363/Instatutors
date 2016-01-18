@@ -226,5 +226,12 @@
         </LinearLayout>
     </ScrollView>
 
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/SignUpScrollView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="510dp"></GridLayout>
+
 
 </RelativeLayout>

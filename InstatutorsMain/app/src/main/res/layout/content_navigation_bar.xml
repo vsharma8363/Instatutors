@@ -7,6 +7,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_side_bar" tools:context="greycubelabs.com.instatutors.navbar.SideBar">
+    tools:showIn="@layout/app_bar_navigation_bar"
+    tools:context="greycubelabs.com.instatutors.navbar.NavigationBar">
 
 </RelativeLayout>
