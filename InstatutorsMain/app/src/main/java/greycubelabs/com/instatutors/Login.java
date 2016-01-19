@@ -127,7 +127,7 @@ public class Login extends Activity {
 
     public void startScreen()
     {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, NavigationDrawer.class);
         startActivity(i);
     }
 

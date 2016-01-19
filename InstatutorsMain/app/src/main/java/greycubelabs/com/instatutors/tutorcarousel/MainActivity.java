@@ -1,15 +1,23 @@
 package greycubelabs.com.instatutors.tutorcarousel;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
+
+import greycubelabs.com.instatutors.MathSubjectSelection;
+import greycubelabs.com.instatutors.NavigationDrawer;
 import greycubelabs.com.instatutors.R;
+import greycubelabs.com.instatutors.ScienceSubjectSelection;
 
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity{
 
 
 	public final static int PAGES = 6;
@@ -48,4 +56,10 @@ public class MainActivity extends FragmentActivity {
 		// previous pages will be showed
 		pager.setPageMargin(-200);
 	}
+
+	public void startDrawer(View view) {
+		Intent i = new Intent(this, NavigationDrawer.class);
+		startActivity(i);
+	}
 }
+

@@ -12,4 +12,13 @@
 	    android:layout_gravity="center"
 	    android:overScrollMode="never" />
 
+	<Button
+		android:layout_width="54dp"
+		android:layout_height="30dp"
+		android:background="@drawable/ic_drawer"
+		android:id="@+id/button4"
+		android:onClick="startDrawer"
+		android:layout_marginTop="20dp"
+		android:layout_marginLeft="20dp"/>
+
 </RelativeLayout>
