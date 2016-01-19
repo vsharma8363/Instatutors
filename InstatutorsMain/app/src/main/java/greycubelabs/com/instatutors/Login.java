@@ -25,7 +25,6 @@ import com.firebase.client.FirebaseError;
 import greycubelabs.com.instatutors.tutorcarousel.*;
 
 public class Login extends Activity {
-
     EditText Email;
     EditText Password;
     TextView WarningLogin;

@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".StartScreen" >
+        <activity android:name=".SettingsScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,9 +38,14 @@
             android:name=".navbar.NavigationBar"
             android:label="@string/title_activity_navigation_bar"
             android:theme="@style/AppTheme.NoActionBar" >
+<<<<<<< Updated upstream
         </activity>-->
         <activity android:name=".NavigationDrawer"></activity>
         <activity android:name=".SettingsScreen" ></activity>
+=======
+        </activity>
+
+>>>>>>> Stashed changes
     </application>
 
 </manifest>

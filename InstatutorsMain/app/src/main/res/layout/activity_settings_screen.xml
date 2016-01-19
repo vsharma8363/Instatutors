@@ -69,26 +69,14 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/Name"
-                android:layout_marginTop="15dp"
-                android:id="@+id/SignUpNameLayout"
-                tools:context="fbla.hhs.eclat.Signup">
-
-
-            </LinearLayout>
-
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email"
-                android:id="@+id/SignUpNameEmail"
-                android:layout_below="@+id/SignUpNameLayout"
-                android:layout_marginTop="20dp"
-                android:textSize="20dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:id="@+id/SignUpNameEmail"
+            android:layout_below="@+id/SignUpNameLayout"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"/>
 
             <EditText
                 android:layout_width="fill_parent"
@@ -106,46 +94,58 @@
                 android:layout_below="@id/SignUpNameEmail"
                 android:layout_marginTop="15dp"/>
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Name"
+                android:layout_marginTop="15dp"
+                android:id="@+id/SignUpNameLayout"
+                tools:context="fbla.hhs.eclat.Signup">
+
+
+            </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
-                android:id="@+id/SignUpNamePassword"
+                android:text="School"
+                android:id="@+id/schoolText"
+                android:layout_below="@+id/SignUpNameLayout"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"/>
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:hint="School Name"
+                android:textColor="#000000"
+                android:textColorHint="@color/orange"
+                android:id="@+id/SchoolName"
+                android:paddingLeft="10dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:background="@drawable/border"
+
+                android:layout_marginTop="15dp" />
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="15dp"
+                />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Change Subjects"
+                android:onClick="changeSubjects"
+                android:id="@+id/ChangeSubjects"
+                android:background="@drawable/button"
+                android:textColor="#FFFFFF"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
                 android:textSize="20dp"
-                android:layout_below="@+id/SignUpEmailInput"
-                android:layout_marginTop="20dp" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:hint="Password"
-                android:textColor="#000000"
-                android:textColorHint="@color/orange"
-                android:id="@+id/SignUpPasswordInput"
-                android:paddingLeft="10dp"
-                android:paddingTop="7dp"
-                android:paddingBottom="7dp"
-                android:background="@drawable/border"
-                android:layout_below="@id/SignUpNamePassword"
-                android:layout_marginTop="15dp" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:hint="Password Confirm"
-                android:textColor="#000000"
-                android:textColorHint="@color/orange"
-                android:id="@+id/SignUpPasswordConfirm"
-                android:paddingLeft="10dp"
-                android:paddingTop="7dp"
-                android:paddingBottom="7dp"
-                android:background="@drawable/border"
-                android:layout_below="@id/SignUpPasswordInput"
-                android:layout_marginTop="15dp" />
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
 
             <Button
                 android:layout_width="fill_parent"
@@ -153,20 +153,13 @@
                 android:text="Continue"
                 android:onClick="SubmitSignup"
                 android:id="@+id/SignUpSubmit"
-                android:layout_below="@id/SignUpPasswordConfirm"
-                android:layout_marginTop="30dp"
                 android:background="@drawable/button"
                 android:textColor="#FFFFFF"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
                 android:textSize="20dp"
-                />
-
-            <Space
-                android:layout_width="fill_parent"
-                android:layout_height="15dp"
-                />
-
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
 
         </LinearLayout>
     </ScrollView>
@@ -177,6 +170,7 @@
         android:layout_alignBottom="@+id/SignUpScrollView"
         android:layout_alignParentStart="true"
         android:layout_marginStart="510dp"></GridLayout>
+
 
 
 </RelativeLayout>
