@@ -1,6 +1,7 @@
 package greycubelabs.com.instatutors;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,8 @@ public class SettingsScreen extends AppCompatActivity {
 
     EditText email, school;
     Button cont;
+    boolean displayButton = false;
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +24,6 @@ public class SettingsScreen extends AppCompatActivity {
         school = (EditText) findViewById(R.id.SettingsSchoolName);
         cont=(Button) findViewById(R.id.SettingsScreenContinueButton);
         cont.setVisibility(View.INVISIBLE);
-        if(entered())
-        {
-            cont.setVisibility(View.VISIBLE);
-        }
     }
 
     public void changeSubjects(View view) {
@@ -34,16 +33,21 @@ public class SettingsScreen extends AppCompatActivity {
         startActivity(myIntent);
     }
 
-    private boolean entered() {
-        if(email.length()>0||school.length()>0)
-        {
-            return true;
-        }
-    return false;
+    public void displayButton() {
+        displayButton = true;
+        cont.setVisibility(View.VISIBLE);
     }
 
+    public void submitChanges(View view) {
 
+    }
 
-
-
+    private Runnable updateButton = new Runnable() {
+        @Override
+        public void run() {
+            if (email.getText().toString().length() > 0 || school.getText().toString().length() > 0) {
+                displayButton();
+            }
+        }
+    };
 }

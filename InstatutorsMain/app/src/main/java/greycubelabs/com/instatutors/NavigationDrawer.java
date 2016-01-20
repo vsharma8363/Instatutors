@@ -24,7 +24,7 @@ public class NavigationDrawer extends Activity {
     }
 
     public void goSettings(View view) {
-        Intent i = new Intent(this, Settings.class);
+        Intent i = new Intent(this, SettingsScreen.class);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
     }

@@ -5,12 +5,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/orange"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="greycubelabs.tutor.instatutors.Signup">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="greycubelabs.tutor.instatutors.SettingsScreen">
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/SignUpScrollView">
+        android:id="@+id/SettingsScrollView">
 
         <LinearLayout
             android:orientation="vertical"
@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Instatutors"
-                android:id="@+id/SignUpTitle"
+                android:id="@+id/SettingsTitle"
                 android:textSize="40dp"
                 android:layout_marginTop="12dp"
                 android:layout_centerHorizontal="true"
@@ -30,10 +30,10 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/SignUpTitle"
+                android:layout_below="@+id/SettingsTitle"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:id="@+id/SignUpDivider">
+                android:id="@+id/SettingsDivider">
 
                 <View
                     android:layout_weight="40"
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:text="Settings"
-                    android:id="@+id/SignUpTextDivider"
+                    android:id="@+id/SettingsTextDivider"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:textSize="25dp"/>
@@ -70,16 +70,17 @@
             </LinearLayout>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Change Subjects"
                 android:onClick="changeSubjects"
-                android:id="@+id/ChangeSubjects"
+                android:id="@+id/SettingsChangeSubjects"
                 android:background="@drawable/button"
                 android:textColor="#FFFFFF"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
                 android:textSize="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true" />
 
@@ -87,8 +88,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Email"
-            android:id="@+id/SignUpNameEmail"
-            android:layout_below="@+id/SignUpNameLayout"
+            android:id="@+id/SettingsEmailText"
+            android:layout_below="@+id/SettingsChangeSubjects"
             android:layout_marginTop="20dp"
             android:textSize="20dp"/>
 
@@ -105,22 +106,11 @@
                 android:paddingTop="7dp"
                 android:paddingBottom="7dp"
                 android:background="@drawable/border"
-                android:layout_below="@id/SignUpNameEmail"
+                android:layout_below="@id/SettingsEmailText"
 
                 android:layout_marginTop="15dp"
                 />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/Name"
-                android:layout_marginTop="15dp"
-                android:id="@+id/SignUpNameLayout"
-                tools:context="fbla.hhs.eclat.Signup">
-
-
-            </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -144,35 +134,18 @@
                 android:background="@drawable/border"
                 android:layout_marginTop="15dp" />
 
-            <Space
-                android:layout_width="fill_parent"
-                android:layout_height="15dp"
-                />
-
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Continue"
-                android:onClick="SubmitSignup"
+                android:onClick="submitChanges"
                 android:id="@+id/SettingsScreenContinueButton"
                 android:background="@drawable/button"
                 android:textColor="#FFFFFF"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
                 android:textSize="20dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true" />
-
+                android:layout_marginTop="80dp" />
         </LinearLayout>
     </ScrollView>
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/SignUpScrollView"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="510dp"></GridLayout>
-
-
-
 </RelativeLayout>
