@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import greycubelabs.com.instatutors.tutorcarousel.MainActivity;
+
 public class SettingsScreen extends AppCompatActivity {
 
     EditText email, school;
@@ -40,6 +42,8 @@ public class SettingsScreen extends AppCompatActivity {
     }
 
     public void submitChanges(View view) {
+        Intent myIntent = new Intent(this, MainActivity.class);
+        startActivity(myIntent);
 
     }
 

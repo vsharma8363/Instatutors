@@ -2,6 +2,7 @@ package greycubelabs.com.instatutors;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -30,7 +31,10 @@ public class NavigationDrawer extends Activity {
     }
 
     public void goHelp(View view) {
-
+        String url = "http://www.greycubelabs.com/";
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
     }
 
     public void goBack(View view) {
