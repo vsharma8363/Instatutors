@@ -24,6 +24,7 @@ public class SettingsScreen extends AppCompatActivity {
         school = (EditText) findViewById(R.id.SettingsSchoolName);
         cont=(Button) findViewById(R.id.SettingsScreenContinueButton);
         cont.setVisibility(View.INVISIBLE);
+        handler.postDelayed(updateButton, 0);
     }
 
     public void changeSubjects(View view) {
@@ -47,7 +48,9 @@ public class SettingsScreen extends AppCompatActivity {
         public void run() {
             if (email.getText().toString().length() > 0 || school.getText().toString().length() > 0) {
                 displayButton();
+                return;
             }
+            handler.postDelayed(this, 0);
         }
     };
 }
