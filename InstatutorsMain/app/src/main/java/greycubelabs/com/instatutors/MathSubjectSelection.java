@@ -12,17 +12,13 @@ import greycubelabs.com.instatutors.tutorcarousel.MainActivity;
 
 public class MathSubjectSelection extends Activity {
 
-    private boolean algebra = false, geo = false, trig = false, precalc = false, calc = false, stats = false,settings=false;
-
+    private boolean algebra = false, geo = false, trig = false, precalc = false, calc = false, stats = false;
+    public static boolean settings=false;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_subject_selection);
         Bundle bundle = getIntent().getExtras();
 
-        if(bundle.getString("strName")== "Settings")
-        {
-            settings=true;
-        }
     }
 
     public void algebraSelection(View view){

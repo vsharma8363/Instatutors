@@ -69,6 +69,20 @@
 
             </LinearLayout>
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Subjects"
+                android:onClick="changeSubjects"
+                android:id="@+id/ChangeSubjects"
+                android:background="@drawable/button"
+                android:textColor="#FFFFFF"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:textSize="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
+
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,7 +98,7 @@
                 android:inputType="textEmailAddress"
                 android:ems="10"
                 android:hint="Email"
-                android:id="@+id/SignUpEmailInput"
+                android:id="@+id/SettingsEmailInput"
                 android:textColor="#000000"
                 android:textColorHint="@color/orange"
                 android:paddingLeft="10dp"
@@ -92,7 +106,9 @@
                 android:paddingBottom="7dp"
                 android:background="@drawable/border"
                 android:layout_below="@id/SignUpNameEmail"
-                android:layout_marginTop="15dp"/>
+
+                android:layout_marginTop="15dp"
+                />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -110,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:text="School"
                 android:id="@+id/schoolText"
-                android:layout_below="@+id/SignUpNameLayout"
+                android:layout_below="@+id/SettingsNameLayout"
                 android:layout_marginTop="20dp"
                 android:textSize="20dp"/>
             <EditText
@@ -121,38 +137,24 @@
                 android:hint="School Name"
                 android:textColor="#000000"
                 android:textColorHint="@color/orange"
-                android:id="@+id/SchoolName"
+                android:id="@+id/SettingsSchoolName"
                 android:paddingLeft="10dp"
                 android:paddingTop="7dp"
                 android:paddingBottom="7dp"
                 android:background="@drawable/border"
-
                 android:layout_marginTop="15dp" />
 
             <Space
                 android:layout_width="fill_parent"
                 android:layout_height="15dp"
                 />
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Change Subjects"
-                android:onClick="changeSubjects"
-                android:id="@+id/ChangeSubjects"
-                android:background="@drawable/button"
-                android:textColor="#FFFFFF"
-                android:paddingBottom="7dp"
-                android:paddingTop="7dp"
-                android:textSize="20dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true" />
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Continue"
                 android:onClick="SubmitSignup"
-                android:id="@+id/SignUpSubmit"
+                android:id="@+id/SettingsScreenContinueButton"
                 android:background="@drawable/button"
                 android:textColor="#FFFFFF"
                 android:paddingBottom="7dp"
