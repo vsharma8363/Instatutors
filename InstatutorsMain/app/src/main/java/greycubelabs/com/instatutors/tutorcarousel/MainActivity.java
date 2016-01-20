@@ -60,6 +60,7 @@ public class MainActivity extends FragmentActivity{
 	public void startDrawer(View view) {
 		Intent i = new Intent(this, NavigationDrawer.class);
 		startActivity(i);
+		overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right );
 	}
 }
 

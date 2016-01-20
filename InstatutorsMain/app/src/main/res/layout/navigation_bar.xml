@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    tools:context="greycubelabs.tutor.instatutors.NavigationDrawer">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/NavigationBarWhiteBar">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/blue"
+        android:id="@+id/NavigationBarHeader"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/NavigationBarWhiteBar"
+        android:layout_alignTop="@id/NavigationBarWhiteBar">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageView"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/icon"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/NavigationHomeSelection"
+        android:layout_gravity="center_vertical"
+        android:layout_alignEnd="@+id/NavigationBarWhiteBar"
+        android:layout_below="@id/NavigationBarHeader"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF"
+        android:clickable="true"
+        android:onClick="goHome">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/HomeIcon"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_home_black_24dp"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:text="Home"
+            android:id="@+id/HomeText"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/NavigationSearchTutorSelection"
+        android:layout_gravity="center_vertical"
+        android:layout_alignEnd="@+id/NavigationBarWhiteBar"
+        android:layout_below="@id/NavigationHomeSelection"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF"
+        android:clickable="true"
+        android:onClick="findTutors">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/SearchIcon"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_action_search"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:text="Find Tutors"
+            android:id="@+id/SearchText"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/NavigationSettingsSelection"
+        android:layout_gravity="center_vertical"
+        android:layout_alignEnd="@+id/NavigationBarWhiteBar"
+        android:layout_below="@id/NavigationSearchTutorSelection"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF"
+        android:clickable="true"
+        android:onClick="goSettings">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/SettingsIcon"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_action_settings"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:text="Settings"
+            android:id="@+id/SettingsText"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_weight="40"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#808080"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@id/NavigationBarWhiteBar"
+        android:gravity="center_vertical"
+        android:layout_marginTop="30dp"
+        android:id="@+id/NavigationBarDivider"
+        android:layout_below="@id/NavigationSettingsSelection"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/NavigationHelpSelection"
+        android:layout_gravity="center_vertical"
+        android:layout_alignEnd="@+id/NavigationBarWhiteBar"
+        android:layout_below="@id/NavigationBarDivider"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF"
+        android:clickable="true"
+        android:onClick="goHelp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/HelpIcon"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_action_help"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:text="Help"
+            android:id="@+id/HelpText"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imageButton"
+        android:background="@drawable/ic_action_back"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:onClick="goBack"/>
+</RelativeLayout>
