@@ -73,4 +73,9 @@ public class ScienceSubjectSelection extends Activity {
         Intent i = new Intent(this, MathSubjectSelection.class);
         startActivity(i);
     }
+
+    public void goBack(View view){
+        Intent i = new Intent(this, LiberalArtsSubjectSelection.class);
+        startActivity(i);
+    }
 }

@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class LiberalArtsSubjectSelection extends Activity {
 
     private boolean us = false, world = false, lit = false;
-
+    public static boolean settings = false;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liberal_arts_subject_selection);
@@ -59,5 +59,15 @@ public class LiberalArtsSubjectSelection extends Activity {
     public void nextSelection(View view) {
         Intent i = new Intent(this, ScienceSubjectSelection.class);
         startActivity(i);
+    }
+
+    public void goBack(View view) {
+        if (settings) {
+            Intent i = new Intent(this, SettingsScreen.class);
+            startActivity(i);
+        } else {
+            Intent i = new Intent(this, Signup.class);
+            startActivity(i);
+        }
     }
 }

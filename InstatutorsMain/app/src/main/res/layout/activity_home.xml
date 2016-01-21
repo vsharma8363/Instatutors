@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@color/orange"
-    tools:context="greycubelabs.com.instatutors.HelpScreen">
+    android:paddingBottom="@dimen/activity_vertical_margin">
 
     <Button
         android:layout_width="36dp"
@@ -21,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Instatutors"
-        android:id="@+id/SettingsTitle"
+        android:id="@+id/HomeTitle"
         android:textSize="40dp"
         android:layout_marginTop="12dp"
         android:layout_centerHorizontal="true"
@@ -31,10 +30,11 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/SettingsTitle"
+        android:layout_below="@+id/HomeTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:id="@+id/SettingsDivider">
+        android:id="@+id/HomeDivider">
+
         <View
             android:layout_weight="40"
             android:layout_width="match_parent"
@@ -50,8 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="Help"
-            android:id="@+id/SettingsTextDivider"
+            android:text="Home"
+            android:id="@+id/HomeTextDivider"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:textSize="25dp"/>
@@ -66,56 +66,37 @@
             android:gravity="center_vertical"
             android:layout_marginTop="15dp"
             />
-        </LinearLayout>
 
+    </LinearLayout>
 
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Email Us"
-        android:onClick="SubmitSignup"
-        android:id="@+id/SignUpSubmit"
-        android:background="@drawable/button"
-        android:textColor="#FFFFFF"
-        android:paddingBottom="7dp"
-        android:paddingTop="7dp"
-        android:textSize="20dp"
-        android:layout_below="@+id/editText2"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:text="Report A Problem Or Suggeset An Update:"
-        android:layout_below="@+id/SettingsDivider"
-        android:layout_alignParentStart="true" />
-
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ratingBar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/HomeImage"
+        android:layout_below="@+id/HomeDivider"
+        android:layout_alignStart="@+id/HomeTitle"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/fett"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Give Us A Rating"
-        android:id="@+id/textView2"
-        android:layout_above="@+id/ratingBar"
-        android:layout_alignParentStart="true" />
+        android:text="Michael Chen"
+        android:id="@+id/HomeName"
+        android:layout_below="@+id/HomeImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="If you are unable to find a tutor or a subject you would like help in is currently not available, Please Email Us above"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/SignUpSubmit"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="44dp" />
+        android:text="Homstead High School"
+        android:id="@+id/HomeSchool"
+        android:layout_below="@+id/HomeName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"/>
+
 
 </RelativeLayout>

@@ -18,7 +18,6 @@ public class MathSubjectSelection extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_subject_selection);
         Bundle bundle = getIntent().getExtras();
-
     }
 
     public void algebraSelection(View view){
@@ -110,5 +109,10 @@ public class MathSubjectSelection extends Activity {
             Intent i = new Intent(this, Login.class);
             startActivity(i);
         }
+    }
+
+    public void goBack(View view) {
+        Intent i = new Intent(this, ScienceSubjectSelection.class);
+        startActivity(i);
     }
 }

@@ -35,19 +35,8 @@
         <activity android:name=".ForgotPassword" />
         <activity android:name=".NavigationDrawer"></activity>
         <activity android:name=".SettingsScreen"></activity>
-<<<<<<< HEAD
-        <!--
-        <activity
-            android:name=".navbar.NavigationBar"
-            android:label="@string/title_activity_navigation_bar"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        -->
-        <activity android:name=".HelpScreen" >
-        </activity>
-=======
-
->>>>>>> origin/master
+        <activity android:name=".HelpScreen" ></activity>
+        <activity android:name=".Home"></activity>
     </application>
 
 </manifest>

@@ -3,7 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+	android:paddingLeft="@dimen/activity_horizontal_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+	android:paddingBottom="@dimen/activity_vertical_margin">
 
 	<android.support.v4.view.ViewPager
 	    android:id="@+id/myviewpager"
@@ -13,12 +17,12 @@
 	    android:overScrollMode="never" />
 
 	<Button
-		android:layout_width="54dp"
-		android:layout_height="30dp"
+		android:layout_width="36dp"
+		android:layout_height="20dp"
 		android:background="@drawable/ic_drawer"
 		android:id="@+id/button4"
 		android:onClick="startDrawer"
-		android:layout_marginTop="20dp"
-		android:layout_marginLeft="20dp"/>
+		android:layout_marginTop="10dp"
+		android:layout_marginLeft="10dp"/>
 
 </RelativeLayout>
