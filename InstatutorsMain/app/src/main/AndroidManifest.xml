@@ -33,22 +33,9 @@
         <activity android:name=".MathSubjectSelection" />
         <activity android:name=".ScienceSubjectSelection" />
         <activity android:name=".ForgotPassword" />
-<<<<<<< Updated upstream
         <activity android:name=".NavigationDrawer"></activity>
         <activity android:name=".SettingsScreen"></activity>
-=======
-        <!--
-        <activity
-            android:name=".navbar.NavigationBar"
-            android:label="@string/title_activity_navigation_bar"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        -->
-        <activity android:name=".NavigationDrawer" />
-        <activity android:name=".SettingsScreen" />
-        <activity android:name=".HelpScreen" >
-        </activity>
->>>>>>> Stashed changes
+
     </application>
 
 </manifest>
