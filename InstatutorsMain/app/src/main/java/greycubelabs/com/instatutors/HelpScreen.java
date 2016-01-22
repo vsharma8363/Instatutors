@@ -20,11 +20,6 @@ public class HelpScreen extends AppCompatActivity {
                 "mailto", "instatutors@gmail.com", null));
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Suggestions for the app");
         startActivity(Intent.createChooser(emailIntent, "I have Suggestions/Problems with the Instatutors app."));
-
-        CharSequence text = "An email message has been sent to this tutor with your contact information, they will get in touch within a few days";
-        int duration = Toast.LENGTH_LONG;
-
-
     }
 
     public void startDrawer(View view) {

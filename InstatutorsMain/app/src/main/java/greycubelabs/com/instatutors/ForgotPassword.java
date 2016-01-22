@@ -19,7 +19,7 @@ public class ForgotPassword extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
         EmailPass = (EditText)findViewById(R.id.ForgotPasswordEmailInput);
-        Firebase ref = new Firebase("https://instatutors.firebaseio.com");
+        ref = new Firebase("https://instatutors.firebaseio.com");
     }
 
     public void ResetPassword(View view){
