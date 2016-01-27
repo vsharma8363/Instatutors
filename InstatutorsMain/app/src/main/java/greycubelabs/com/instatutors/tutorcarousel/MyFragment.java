@@ -25,8 +25,6 @@ import java.net.URL;
 import greycubelabs.com.instatutors.R;
 
 public class MyFragment extends Fragment {
-
-
 	public static Fragment newInstance(MainActivity context, int pos, 
 			float scale)
 	{

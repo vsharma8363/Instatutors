@@ -10,9 +10,13 @@ import greycubelabs.com.instatutors.tutorcarousel.MainActivity;
 
 public class NavigationDrawer extends Activity {
     private static int currentScreen = 0; //0 = home, 1 = main, 2 = settings, 3 = help
+    private String id;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.navigation_bar);
+
+        Intent i = getIntent();
+        id = i.getStringExtra("id");
     }
 
     public void goHome(View view) {
@@ -32,6 +36,7 @@ public class NavigationDrawer extends Activity {
     public void goSettings(View view) {
         currentScreen = 2;
         Intent i = new Intent(this, SettingsScreen.class);
+        i.putExtra("id", id);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
     }

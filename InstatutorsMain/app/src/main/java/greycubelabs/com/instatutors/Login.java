@@ -32,6 +32,7 @@ public class Login extends Activity {
     Intent Login;
     Firebase myFirebaseRef;
     TextView FailedLogin;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,43 +65,19 @@ public class Login extends Activity {
     }
 
     public void SubmitLogin(View view) {
-
-        startScreen();
-
         myFirebaseRef.authWithPassword(Email.getText().toString(),
                 Password.getText().toString(), new Firebase.AuthResultHandler() {
 
                     @Override
                     public void onAuthenticated(AuthData authData) {
-
-
-
+                        id = authData.getUid();
+                        startScreen();
                         Toast.makeText(Login.this, "You have been logged in",
                                 Toast.LENGTH_SHORT).show();
-
-
-
-
-
-
-
                     }
+
                     @Override
                     public void onAuthenticationError(FirebaseError firebaseError) {
-                        //Create alert with firebaseError.getMessage()
-
-                        /*Toast.makeText(Login.this, "There has been a login error, please change your username and/or password",
-                                Toast.LENGTH_LONG).show();
-
-                        AlertDialog.Builder builder1 = new AlertDialog.Builder(Login.this);
-                        builder1.setMessage(firebaseError.getMessage());
-                        builder1.setCancelable(true);
-                        builder1.setPositiveButton("Ok",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.cancel();
-                                    }
-                                });*/
                         failedLogin();
                     }
 
@@ -127,6 +104,7 @@ public class Login extends Activity {
     public void startScreen()
     {
         Intent i = new Intent(this, Home.class);
+        i.putExtra("id", id);
         startActivity(i);
     }
 

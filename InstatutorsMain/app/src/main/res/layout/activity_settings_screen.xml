@@ -128,20 +128,13 @@
                 android:layout_below="@+id/SettingsNameLayout"
                 android:layout_marginTop="20dp"
                 android:textSize="20dp"/>
-            <EditText
-                android:layout_width="fill_parent"
+            <Spinner
+                android:id="@+id/SettingsChangeHighSchool"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:hint="School Name"
-                android:textColor="#000000"
-                android:textColorHint="@color/orange"
-                android:id="@+id/SettingsSchoolName"
-                android:paddingLeft="10dp"
-                android:paddingTop="7dp"
-                android:paddingBottom="7dp"
                 android:background="@drawable/border"
-                android:layout_marginTop="15dp" />
+                android:spinnerMode="dropdown"
+                android:layout_marginTop="20dp" />
 
             <Button
                 android:layout_width="fill_parent"

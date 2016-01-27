@@ -23,7 +23,7 @@ public class Signup extends Activity {
     EditText ConfirmPassword;
     EditText Email;
     Firebase myFirebaseRef;
-    String Result;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,53 +55,36 @@ public class Signup extends Activity {
         b.setTypeface(type);*/
     }
 
+    public void nextScreen() {
+        Intent i = new Intent(this, LiberalArtsSubjectSelection.class);
+        i.putExtra("id", userID);
+        startActivity(i);
+    }
+
     public void SubmitSignup(View view) {
-
-
             if (!valid() && Password.getText().toString().equals(ConfirmPassword.getText().toString())) {
-
                 MakeAUser();
-
-                Toast.makeText(Signup.this, "Choose your subjects",
-                        Toast.LENGTH_SHORT).show();
-
-                Intent i = new Intent(this, LiberalArtsSubjectSelection.class);
-                startActivity(i);
-
             } else {
-
                 Toast.makeText(Signup.this, "All text fields must be full, " +
                                 "Passwords must match as well",
                         Toast.LENGTH_SHORT).show();
 
                 Password.setText(null);
                 ConfirmPassword.setText(null);
-
             }
-
-        //Submit information to the firebase database
-        //Put a dialog here to let user know about redirect
-
-
     }
 
     public void HaveAnAccount(View view) {
         Intent i = new Intent(this, Login.class);
         startActivity(i);
     }
-
-
     public void MakeAUser() {
-
         myFirebaseRef.createUser(Email.getText().toString(),
                 Password.getText().toString(), new Firebase.ResultHandler() {
-
                     @Override
                     public void onSuccess() {
-
                         myFirebaseRef.authWithPassword(Email.getText().toString(),
                                 Password.getText().toString(), new Firebase.AuthResultHandler() {
-
                                     @Override
                                     public void onAuthenticated(AuthData authData) {
 
@@ -113,8 +96,10 @@ public class Signup extends Activity {
                                         Toast.makeText(Signup.this, "Success, your account was made!",
                                                 Toast.LENGTH_SHORT).show();
 
-                                    }
+                                        userID = authData.getUid();
 
+                                        nextScreen();
+                                    }
                                     @Override
                                     public void onAuthenticationError(FirebaseError firebaseError) {
                                         //Auth Error
@@ -122,18 +107,13 @@ public class Signup extends Activity {
                                     }
                                 });
                     }
-
                     @Override
                     public void onError(FirebaseError firebaseError) {
 
                         Toast.makeText(Signup.this, firebaseError.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-
                 });
     }
-
-//65-90 97-122
-
     private boolean valid() {
         if (Email.getText().length() == 0 || FirstName.getText().length() == 0 || LastName.getText().length() == 0 || Password.getText().length() == 0)
             return true;

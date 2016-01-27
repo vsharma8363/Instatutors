@@ -159,7 +159,8 @@
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"
                 android:paddingBottom="7dp"
-                android:paddingTop="7dp"/>
+                android:paddingTop="7dp"
+                android:onClick="goBack"/>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
