@@ -22,6 +22,7 @@ public class NavigationDrawer extends Activity {
     public void goHome(View view) {
         currentScreen = 0;
         Intent i = new Intent(this, Home.class);
+        i.putExtra("id", id);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
     }
@@ -29,6 +30,7 @@ public class NavigationDrawer extends Activity {
     public void findTutors(View view) {
         currentScreen = 1;
         Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("id", id);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
     }
@@ -44,6 +46,7 @@ public class NavigationDrawer extends Activity {
     public void goHelp(View view) {
         currentScreen = 3;
         Intent i = new Intent(this, HelpScreen.class);
+        i.putExtra("id", id);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
     }
@@ -51,18 +54,22 @@ public class NavigationDrawer extends Activity {
     public void goBack(View view) {
         if (currentScreen == 0) {
             Intent i = new Intent(this, Home.class);
+            i.putExtra("id", id);
             startActivity(i);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
         } else if (currentScreen == 1) {
             Intent i = new Intent(this, MainActivity.class);
+            i.putExtra("id", id);
             startActivity(i);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
         } else if (currentScreen == 2) {
             Intent i = new Intent(this, SettingsScreen.class);
+            i.putExtra("id", id);
             startActivity(i);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
         } else if (currentScreen == 3) {
             Intent i = new Intent(this, HelpScreen.class);
+            i.putExtra("id", id);
             startActivity(i);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
         }
