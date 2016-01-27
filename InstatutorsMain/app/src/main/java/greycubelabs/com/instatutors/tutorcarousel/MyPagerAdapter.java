@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
+import java.util.ArrayList;
+
 import greycubelabs.com.instatutors.R;
 
 
@@ -17,7 +19,7 @@ public class MyPagerAdapter extends FragmentPagerAdapter implements
 	private FragmentManager fm;
 	private float scale;
 
-	public MyPagerAdapter(MainActivity context, FragmentManager fm) {
+	public MyPagerAdapter(MainActivity context, FragmentManager fm, ArrayList<String[]> tutors) {
 		super(fm);
 		this.fm = fm;
 		this.context = context;

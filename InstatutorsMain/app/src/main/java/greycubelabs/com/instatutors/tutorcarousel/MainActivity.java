@@ -16,6 +16,9 @@ import com.firebase.client.ValueEventListener;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 import greycubelabs.com.instatutors.MathSubjectSelection;
 import greycubelabs.com.instatutors.NavigationDrawer;
@@ -68,9 +71,16 @@ public class MainActivity extends FragmentActivity{
 			}
 		});
 
+		findTutors();
+		Collections.sort(tutors, new Comparator<String[]>() {
+			public int compare(String[] first, String[] second) {
+				return Integer.compare(Integer.parseInt(first[1]), Integer.parseInt(second[1]));
+			}
+		});
+
 		pager = (ViewPager) findViewById(R.id.myviewpager);
 
-		adapter = new MyPagerAdapter(this, this.getSupportFragmentManager());
+		adapter = new MyPagerAdapter(this, this.getSupportFragmentManager(), tutors);
 		pager.setAdapter(adapter);
 		pager.setOnPageChangeListener(adapter);
 		
@@ -94,14 +104,20 @@ public class MainActivity extends FragmentActivity{
 		overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right );
 	}
 
-	ArrayList<String> tutors = new ArrayList<String>();
+	ArrayList<String[]> tutors = new ArrayList<String[]>();
 
 	public void findTutors() {
 		firebase.child("users").addValueEventListener(new ValueEventListener() {
 			@Override
 			public void onDataChange(DataSnapshot dataSnapshot) {
 				ArrayList<String> possible = dataSnapshot.getValue(ArrayList.class);
-
+				for (String id : possible) {
+					findNumOfMatches(id);
+					if (tempCount > 0) {
+						String[] temp = {id, tempCount + ""};
+						tutors.add(temp);
+					}
+				}
 			}
 
 			@Override
