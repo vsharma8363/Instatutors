@@ -63,14 +63,27 @@ public class MyFragment extends Fragment {
 
 		String currentID = tutors.get(pos);
 
-		firebase.child("users").child(currentID).addValueEventListener(new ValueEventListener() {
+		firebase.child("users").child(currentID).addListenerForSingleValueEvent(new ValueEventListener() {
 			@Override
 			public void onDataChange(DataSnapshot dataSnapshot) {
-				TextView tv = (TextView) l.findViewById(R.id.text);
-				TextView Content = (TextView) l.findViewById(R.id.TextViewTutor);
+				TextView tv = (TextView) l.findViewById(R.id.CarouselName);
+				TextView subjects = (TextView) l.findViewById(R.id.Subjects);
+				String s = "";
+				ArrayList<String> math = dataSnapshot.child("mathSubjects").getValue(ArrayList.class);
+				ArrayList<String> liberal = dataSnapshot.child("liberalSubjects").getValue(ArrayList.class);
+				ArrayList<String> science = dataSnapshot.child("scienceSubjects").getValue(ArrayList.class);
+				for (String i: math) {
+					s += i + "\n" + "\n";
+				}
+				for (String i: liberal) {
+					s += i + "\n"+ "\n";
+				}
+				for (String i: science) {
+					s += i + "\n"+ "\n"	;
+				}
+				subjects.setText(s);
 				ImageButton Button = (ImageButton) l.findViewById(R.id.content);
 				tv.setText(dataSnapshot.child("full_name").getValue(String.class));
-				Content.setText("Hi, my name's Bryce, I'm a junior at Homestead High School in California. I teach Computer Programming, and Physics. Tap on my face to send me an email, and get in touch with me.");
 				Button.setImageResource(R.drawable.goku);
 				Button.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View v) {
@@ -78,6 +91,7 @@ public class MyFragment extends Fragment {
 					}
 				});
 			}
+
 			@Override
 			public void onCancelled(FirebaseError firebaseError) {
 

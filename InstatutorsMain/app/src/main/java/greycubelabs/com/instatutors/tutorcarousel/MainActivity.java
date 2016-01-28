@@ -104,7 +104,7 @@ public class MainActivity extends FragmentActivity{
                             }
                         }
                         if (tempCount > 0) {
-                            tutors.add(dataSnapshot.getKey());
+                            tutors.add(child.getKey());
                         }
                     }
                     //Log.d("LOOKE", tutors.size()+"");
@@ -140,59 +140,9 @@ public class MainActivity extends FragmentActivity{
 
 	public void startDrawer(View view) {
 		Intent i = new Intent(this, NavigationDrawer.class);
+        i.putExtra("id", id);
 		startActivity(i);
 		overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
-	}
-
-	public void findTutors() {
-		firebase.child("users").addValueEventListener(new ValueEventListener() {
-			@Override
-			public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot child: dataSnapshot.getChildren()) {
-                    findNumOfMatches(child.getKey());
-                }
-			}
-
-			@Override
-			public void onCancelled(FirebaseError firebaseError) {
-
-			}
-		});
-	}
-
-	public void findNumOfMatches(String id) {
-		firebase.child("users").child(id).addValueEventListener(new ValueEventListener() {
-			@Override
-			public void onDataChange(DataSnapshot dataSnapshot) {
-				ArrayList<String> tutorMath = dataSnapshot.child("mathSubjects").getValue(ArrayList.class);
-				ArrayList<String> tutorScience = dataSnapshot.child("scienceSubjects").getValue(ArrayList.class);
-				ArrayList<String> tutorLiberal = dataSnapshot.child("liberalSubjects").getValue(ArrayList.class);
-                int tempCount = 0;
-				for (String s: mathSubjects) {
-					if (tutorMath.contains(s)) {
-						tempCount++;
-					}
-				}
-				for (String s: scienceSubjects) {
-					if (tutorScience.contains(s)) {
-						tempCount++;
-					}
-				}
-				for (String s: liberalSubjects) {
-					if (tutorLiberal.contains(s)) {
-						tempCount++;
-					}
-				}
-                if (tempCount > 0) {
-                    tutors.add(dataSnapshot.getKey());
-                }
-			}
-
-			@Override
-			public void onCancelled(FirebaseError firebaseError) {
-
-			}
-		});
 	}
 }
 

@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +26,7 @@ public class Signup extends Activity {
     EditText Email;
     Firebase myFirebaseRef;
     String userID;
+    Spinner dropdown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,10 @@ public class Signup extends Activity {
         TextView email = (TextView) findViewById(R.id.SignUpNameEmail);
         TextView pass = (TextView) findViewById(R.id.SignUpNamePassword);
         Button b = (Button) findViewById(R.id.SignUpSubmit);
+        dropdown = (Spinner)findViewById(R.id.SettingsChangeHighSchool);
+        String[] items = new String[]{"Select from Available High Schools", "Homestead High School"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
         /*Typeface type = Typeface.createFromAsset(getAssets(),"Raleway.ttf");
         Password.setTypeface(type);
         ConfirmPassword.setTypeface(type);

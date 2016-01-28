@@ -8,11 +8,38 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
+import java.util.ArrayList;
+
 public class Home extends Activity {
     private String s;
+    private Firebase firebase;
+    private TextView name, school;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        name = (TextView) findViewById(R.id.HomeName);
+        school = (TextView) findViewById(R.id.HomeSchool);
+
+        firebase = new Firebase("https://instatutors.firebaseio.com/");
+
+        firebase.child("users").child(s).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                name.setText(dataSnapshot.child("full_name").getValue(String.class));
+                school.setText(dataSnapshot.child("full_name").getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
 
         Intent i = getIntent();
         s = i.getStringExtra("id");
