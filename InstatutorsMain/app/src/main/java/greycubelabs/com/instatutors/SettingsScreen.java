@@ -31,6 +31,7 @@ public class SettingsScreen extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Firebase.setAndroidContext(this);
         setContentView(R.layout.activity_settings_screen);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         email = (EditText) findViewById(R.id.SettingsEmailInput);
@@ -87,6 +88,7 @@ public class SettingsScreen extends AppCompatActivity implements AdapterView.OnI
 
     public void startDrawer(View view) {
         Intent i = new Intent(this, NavigationDrawer.class);
+        i.putExtra("id", id);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right );
     }

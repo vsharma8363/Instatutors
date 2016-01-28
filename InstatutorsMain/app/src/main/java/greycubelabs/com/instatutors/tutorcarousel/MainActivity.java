@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
@@ -27,13 +28,16 @@ import greycubelabs.com.instatutors.ScienceSubjectSelection;
 
 
 public class MainActivity extends FragmentActivity{
-
-
-	public final static int PAGES = 6;
+	public static int PAGES;
 
 	// more than 1000 times just in order to test your "infinite" ViewPager :D
-	public final static int LOOPS = 1000; 
-	public final static int FIRST_PAGE = PAGES * LOOPS / 2;
+	public static int LOOPS = 1000;
+	public static int FIRST_PAGE;
+    /*public final static int PAGES = 6;
+
+    // more than 1000 times just in order to test your "infinite" ViewPager :D
+    public final static int LOOPS = 1000;
+    public final static int FIRST_PAGE = PAGES * LOOPS / 2;*/
 	public final static float BIG_SCALE = 1.0f;
 	public final static float SMALL_SCALE = 0.7f;
 	public final static float DIFF_SCALE = BIG_SCALE - SMALL_SCALE;
@@ -46,6 +50,7 @@ public class MainActivity extends FragmentActivity{
 	private ArrayList<String> mathSubjects;
 	private ArrayList<String> scienceSubjects;
 	private ArrayList<String> liberalSubjects;
+    private ArrayList<String> tutors = new ArrayList<String>();
 
 	public void onCreate(Bundle savedInstanceState) {
 		Firebase.setAndroidContext(this);
@@ -58,25 +63,30 @@ public class MainActivity extends FragmentActivity{
 		firebase = new Firebase("https://instatutors.firebaseio.com/");
 
 		firebase.child("users").child(id).addValueEventListener(new ValueEventListener() {
-			@Override
-			public void onDataChange(DataSnapshot dataSnapshot) {
-				mathSubjects = dataSnapshot.child("mathSubjects").getValue(ArrayList.class);
-				scienceSubjects = dataSnapshot.child("scienceSubjects").getValue(ArrayList.class);
-				liberalSubjects = dataSnapshot.child("liberalSubjects").getValue(ArrayList.class);
-				highSchool = dataSnapshot.child("school").getValue().toString();
-			}
-			@Override
-			public void onCancelled(FirebaseError firebaseError) {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                mathSubjects = dataSnapshot.child("mathSubjects").getValue(ArrayList.class);
+                scienceSubjects = dataSnapshot.child("scienceSubjects").getValue(ArrayList.class);
+                liberalSubjects = dataSnapshot.child("liberalSubjects").getValue(ArrayList.class);
+                highSchool = dataSnapshot.child("school").getValue(String.class);
+            }
 
-			}
-		});
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
 
 		findTutors();
-		Collections.sort(tutors, new Comparator<String[]>() {
-			public int compare(String[] first, String[] second) {
-				return Integer.compare(Integer.parseInt(first[1]), Integer.parseInt(second[1]));
-			}
-		});
+
+        PAGES = 10;
+        FIRST_PAGE = PAGES * LOOPS / 2;
+
+        //Toast.makeText(MainActivity.this, tutors.size() + "",
+          //      Toast.LENGTH_SHORT).show();
+
+        TextView text = (TextView) findViewById(R.id.random);
+        text.setText(tutors.get(0));
 
 		pager = (ViewPager) findViewById(R.id.myviewpager);
 
@@ -101,23 +111,16 @@ public class MainActivity extends FragmentActivity{
 	public void startDrawer(View view) {
 		Intent i = new Intent(this, NavigationDrawer.class);
 		startActivity(i);
-		overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right );
+		overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
 	}
-
-	ArrayList<String[]> tutors = new ArrayList<String[]>();
 
 	public void findTutors() {
 		firebase.child("users").addValueEventListener(new ValueEventListener() {
 			@Override
 			public void onDataChange(DataSnapshot dataSnapshot) {
-				ArrayList<String> possible = dataSnapshot.getValue(ArrayList.class);
-				for (String id : possible) {
-					findNumOfMatches(id);
-					if (tempCount > 0) {
-						String[] temp = {id, tempCount + ""};
-						tutors.add(temp);
-					}
-				}
+                for (DataSnapshot child: dataSnapshot.getChildren()) {
+                    findNumOfMatches(child.getKey());
+                }
 			}
 
 			@Override
@@ -127,8 +130,6 @@ public class MainActivity extends FragmentActivity{
 		});
 	}
 
-	public int tempCount = 0;
-
 	public void findNumOfMatches(String id) {
 		firebase.child("users").child(id).addValueEventListener(new ValueEventListener() {
 			@Override
@@ -136,6 +137,7 @@ public class MainActivity extends FragmentActivity{
 				ArrayList<String> tutorMath = dataSnapshot.child("mathSubjects").getValue(ArrayList.class);
 				ArrayList<String> tutorScience = dataSnapshot.child("scienceSubjects").getValue(ArrayList.class);
 				ArrayList<String> tutorLiberal = dataSnapshot.child("liberalSubjects").getValue(ArrayList.class);
+                int tempCount = 0;
 				for (String s: mathSubjects) {
 					if (tutorMath.contains(s)) {
 						tempCount++;
@@ -151,6 +153,9 @@ public class MainActivity extends FragmentActivity{
 						tempCount++;
 					}
 				}
+                if (tempCount > 0) {
+                    tutors.add(dataSnapshot.getKey());
+                }
 			}
 
 			@Override

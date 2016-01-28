@@ -4,9 +4,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import greycubelabs.com.instatutors.Home;
 import greycubelabs.com.instatutors.R;
 
 
@@ -18,16 +21,19 @@ public class MyPagerAdapter extends FragmentPagerAdapter implements
 	private MainActivity context;
 	private FragmentManager fm;
 	private float scale;
+	private ArrayList<String> tutors = new ArrayList<String>();
 
-	public MyPagerAdapter(MainActivity context, FragmentManager fm, ArrayList<String[]> tutors) {
+	public MyPagerAdapter(MainActivity context, FragmentManager fm, ArrayList<String> tuts) {
 		super(fm);
 		this.fm = fm;
 		this.context = context;
+        tutors = tuts;
+        Log.d("LOOKE HERE", tutors.size() + "");
+        Log.d("LOOKE HERE", tuts.size()+"");
 	}
 
 	@Override
-	public Fragment getItem(int position) 
-	{
+	public Fragment getItem(int position) {
         // make the first pager bigger than others
         if (position == MainActivity.FIRST_PAGE)
         	scale = MainActivity.BIG_SCALE;     	
@@ -35,7 +41,7 @@ public class MyPagerAdapter extends FragmentPagerAdapter implements
         	scale = MainActivity.SMALL_SCALE;
         
         position = position % MainActivity.PAGES;
-        return MyFragment.newInstance(context, position, scale);
+        return MyFragment.newInstance(context, position, scale, tutors);
 	}
 
 	@Override
@@ -46,10 +52,8 @@ public class MyPagerAdapter extends FragmentPagerAdapter implements
 
 	@Override
 	public void onPageScrolled(int position, float positionOffset,
-			int positionOffsetPixels) 
-	{	
-		if (positionOffset >= 0f && positionOffset <= 1f)
-		{
+			int positionOffsetPixels) {
+		if (positionOffset >= 0f && positionOffset <= 1f) {
 		        cur = getRootView(position);
         		cur.setScaleBoth(MainActivity.BIG_SCALE - MainActivity.DIFF_SCALE * positionOffset);
 
@@ -66,15 +70,13 @@ public class MyPagerAdapter extends FragmentPagerAdapter implements
 	@Override
 	public void onPageScrollStateChanged(int state) {}
 	
-	private MyLinearLayout getRootView(int position)
-	{
-		return (MyLinearLayout) 
+	private MyLinearLayout getRootView(int position) {
+		return (MyLinearLayout)
 				fm.findFragmentByTag(this.getFragmentTag(position))
 				.getView().findViewById(R.id.root);
 	}
 	
-	private String getFragmentTag(int position)
-	{
-	    return "android:switcher:" + context.pager.getId() + ":" + position;
+	private String getFragmentTag(int position) {
+        return "android:switcher:" + context.pager.getId() + ":" + position;
 	}
 }
