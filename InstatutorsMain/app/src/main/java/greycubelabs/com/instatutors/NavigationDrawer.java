@@ -5,19 +5,47 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
+import java.util.ArrayList;
 
 import greycubelabs.com.instatutors.tutorcarousel.MainActivity;
 
 public class NavigationDrawer extends Activity {
     private static int currentScreen = 0; //0 = home, 1 = main, 2 = settings, 3 = help
     private String id;
+    private Firebase firebase;
+    private LinearLayout findtutors;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_bar);
 
         Intent i = getIntent();
         id = i.getStringExtra("id");
+
+        findtutors = (LinearLayout) findViewById(R.id.NavigationSearchTutorSelection);
+
+        firebase = new Firebase("https://instatutors.firebaseio.com/");
+
+        firebase.child("users").child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child("isTutor").getValue(Boolean.class)) {
+                    findtutors.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
     }
 
     public void goHome(View view) {

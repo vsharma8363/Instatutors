@@ -28,7 +28,6 @@
         <activity android:name=".tutorcarousel.MainActivity" />
         <activity android:name=".Signup" />
         <activity android:name=".Login" />
-        <activity android:name=".TutorSignup" />
         <activity android:name=".LanguageSubjectSelection" />
         <activity android:name=".LiberalArtsSubjectSelection" />
         <activity android:name=".MathSubjectSelection" />

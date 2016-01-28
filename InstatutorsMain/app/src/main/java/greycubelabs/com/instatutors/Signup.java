@@ -28,6 +28,7 @@ public class Signup extends Activity implements AdapterView.OnItemSelectedListen
     Firebase myFirebaseRef;
     String userID, school;
     Spinner dropdown;
+    private boolean isTutor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,9 @@ public class Signup extends Activity implements AdapterView.OnItemSelectedListen
         String[] items = new String[]{"Select from Available High Schools", "Homestead High School"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
+
+        Intent i = getIntent();
+        isTutor = i.getBooleanExtra("tutor", false);
     }
 
     public void nextScreen() {
@@ -84,7 +88,9 @@ public class Signup extends Activity implements AdapterView.OnItemSelectedListen
                                         myFirebaseRef.child("users").child(authData.getUid()).child("email")
                                                 .setValue(Email.getText().toString());
                                         myFirebaseRef.child("users").child(authData.getUid()).child("school")
-                                                .setValue(Email.getText().toString());
+                                                .setValue("Homestead High School");
+                                        myFirebaseRef.child("users").child(authData.getUid()).child("isTutor")
+                                                .setValue(isTutor);
 
                                         Toast.makeText(Signup.this, "Success, your account was made!",
                                                 Toast.LENGTH_SHORT).show();
@@ -111,35 +117,11 @@ public class Signup extends Activity implements AdapterView.OnItemSelectedListen
         if (Email.getText().length() == 0 || FirstName.getText().length() == 0 || LastName.getText().length() == 0 || Password.getText().length() == 0)
             return true;
 
-        String first = FirstName.getText().toString();
-        String last = LastName.getText().toString();
-        String pass = Password.getText().toString();
-
-        for (int i = 0; i < FirstName.getText().length(); i++) {
-            if (!(first.charAt(i) >= 65 && first.charAt(i) <= 90 || first.charAt(i) >= 97 && first.charAt(i) <= 122)) {
-                return true;
-            }
-        }
-
-        for (int i = 0; i < LastName.getText().length(); i++) {
-            if (!(last.charAt(i) >= 65 && last.charAt(i) <= 90 || last.charAt(i) >= 97 && last.charAt(i) <= 122)) {
-                return true;
-            }
-        }
-
-        for (int i = 0; i < Password.getText().length(); i++) {
-            if (!(pass.charAt(i) >= 65 && pass.charAt(i) <= 90 || pass.charAt(i) >= 97 && pass.charAt(i) <= 122)) {
-                return true;
-            }
-        }
-
         return false;
     }
 
     public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-        if (position > 0) {
-            school = parent.getItemAtPosition(position).toString();
-        }
+        school = parent.getItemAtPosition(position).toString();
     }
 
     public void onNothingSelected(AdapterView<?> arg0) {

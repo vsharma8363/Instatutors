@@ -84,7 +84,7 @@ public class MainActivity extends FragmentActivity{
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     for (DataSnapshot child : dataSnapshot.getChildren()) {
-                        if (child.child("school").getValue(String.class).equals(highSchool)) {
+                        if (child.child("school").getValue(String.class).equals(highSchool) && child.child("isTutor").getValue(Boolean.class)) {
                             ArrayList<String> tutorMath = child.child("mathSubjects").getValue(ArrayList.class);
                             ArrayList<String> tutorScience = child.child("scienceSubjects").getValue(ArrayList.class);
                             ArrayList<String> tutorLiberal = child.child("liberalSubjects").getValue(ArrayList.class);

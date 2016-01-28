@@ -18,11 +18,13 @@ public class SignupJobs extends Activity {
     }
 
     public void BeATutor(View view){
-        Intent i = new Intent(this, TutorSignup.class);
+        Intent i = new Intent(this, Signup.class);
+        i.putExtra("tutor", true);
         startActivity(i);
     }
     public void BeATutee(View view){
         Intent i = new Intent(this, Signup.class);
+        i.putExtra("tutor", false);
         startActivity(i);
 
     }
