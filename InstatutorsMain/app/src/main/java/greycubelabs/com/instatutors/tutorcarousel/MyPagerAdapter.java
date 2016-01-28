@@ -28,8 +28,6 @@ public class MyPagerAdapter extends FragmentPagerAdapter implements
 		this.fm = fm;
 		this.context = context;
         tutors = tuts;
-        Log.d("LOOKE HERE", tutors.size() + "");
-        Log.d("LOOKE HERE", tuts.size()+"");
 	}
 
 	@Override

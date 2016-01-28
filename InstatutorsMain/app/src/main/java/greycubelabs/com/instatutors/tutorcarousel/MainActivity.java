@@ -1,11 +1,13 @@
 package greycubelabs.com.instatutors.tutorcarousel;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +53,7 @@ public class MainActivity extends FragmentActivity{
 	private ArrayList<String> scienceSubjects;
 	private ArrayList<String> liberalSubjects;
     private ArrayList<String> tutors = new ArrayList<String>();
+    private android.support.v4.app.FragmentManager manager = this.getSupportFragmentManager();
 
 	public void onCreate(Bundle savedInstanceState) {
 		Firebase.setAndroidContext(this);
@@ -62,7 +65,7 @@ public class MainActivity extends FragmentActivity{
 
 		firebase = new Firebase("https://instatutors.firebaseio.com/");
 
-		firebase.child("users").child(id).addValueEventListener(new ValueEventListener() {
+		firebase.child("users").child(id).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 mathSubjects = dataSnapshot.child("mathSubjects").getValue(ArrayList.class);
@@ -77,35 +80,62 @@ public class MainActivity extends FragmentActivity{
             }
         });
 
-		findTutors();
+        firebase.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for (DataSnapshot child : dataSnapshot.getChildren()) {
+                        ArrayList<String> tutorMath = child.child("mathSubjects").getValue(ArrayList.class);
+                        ArrayList<String> tutorScience = child.child("scienceSubjects").getValue(ArrayList.class);
+                        ArrayList<String> tutorLiberal = child.child("liberalSubjects").getValue(ArrayList.class);
+                        int tempCount = 0;
+                        for (String s : mathSubjects) {
+                            if (tutorMath.contains(s)) {
+                                tempCount++;
+                            }
+                        }
+                        for (String s : scienceSubjects) {
+                            if (tutorScience.contains(s)) {
+                                tempCount++;
+                            }
+                        }
+                        for (String s : liberalSubjects) {
+                            if (tutorLiberal.contains(s)) {
+                                tempCount++;
+                            }
+                        }
+                        if (tempCount > 0) {
+                            tutors.add(dataSnapshot.getKey());
+                        }
+                    }
+                    //Log.d("LOOKE", tutors.size()+"");
+                    PAGES = tutors.size();
+                    FIRST_PAGE = PAGES * LOOPS / 2;
 
-        PAGES = 10;
-        FIRST_PAGE = PAGES * LOOPS / 2;
+                    pager = (ViewPager) findViewById(R.id.myviewpager);
 
-        //Toast.makeText(MainActivity.this, tutors.size() + "",
-          //      Toast.LENGTH_SHORT).show();
+                    adapter = new MyPagerAdapter(MainActivity.this, manager, tutors);
+                    pager.setAdapter(adapter);
+                    pager.setOnPageChangeListener(adapter);
 
-        TextView text = (TextView) findViewById(R.id.random);
-        text.setText(tutors.get(0));
 
-		pager = (ViewPager) findViewById(R.id.myviewpager);
+                    // Set current item to the middle page so we can fling to both
+                    // directions left and right
+                    pager.setCurrentItem(FIRST_PAGE);
 
-		adapter = new MyPagerAdapter(this, this.getSupportFragmentManager(), tutors);
-		pager.setAdapter(adapter);
-		pager.setOnPageChangeListener(adapter);
-		
-		
-		// Set current item to the middle page so we can fling to both
-		// directions left and right
-		pager.setCurrentItem(FIRST_PAGE);
-		
-		// Necessary or the pager will only have one extra page to show
-		// make this at least however many pages you can see
-		pager.setOffscreenPageLimit(3);
-		
-		// Set margin for pages as a negative number, so a part of next and 
-		// previous pages will be showed
-		pager.setPageMargin(-200);
+                    // Necessary or the pager will only have one extra page to show
+                    // make this at least however many pages you can see
+                    pager.setOffscreenPageLimit(3);
+
+                    // Set margin for pages as a negative number, so a part of next and
+                    // previous pages will be showed
+                    pager.setPageMargin(-200);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
 	}
 
 	public void startDrawer(View view) {

@@ -59,6 +59,8 @@ public class MyFragment extends Fragment {
 		int pos = this.getArguments().getInt("pos");
 		ArrayList<String> tutors = this.getArguments().getStringArrayList("tutors");
 
+		//Log.d("LOOKE HERE FRAG:", pos + " " + tutors.size()+"");
+
 		String currentID = tutors.get(pos);
 
 		firebase.child("users").child(currentID).addValueEventListener(new ValueEventListener() {
