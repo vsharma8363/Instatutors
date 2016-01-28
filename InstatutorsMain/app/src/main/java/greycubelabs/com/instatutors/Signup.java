@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,14 +19,14 @@ import com.firebase.client.FirebaseError;
 import greycubelabs.com.instatutors.tutorcarousel.MainActivity;
 
 
-public class Signup extends Activity {
+public class Signup extends Activity implements AdapterView.OnItemSelectedListener {
 
     EditText FirstName, LastName;
     EditText Password;
     EditText ConfirmPassword;
     EditText Email;
     Firebase myFirebaseRef;
-    String userID;
+    String userID, school;
     Spinner dropdown;
 
     @Override
@@ -39,27 +40,10 @@ public class Signup extends Activity {
         FirstName = (EditText) findViewById(R.id.SignUpFirstNameInput);
         LastName = (EditText) findViewById(R.id.SignUpLastNameInput);
         Email = (EditText) findViewById(R.id.SignUpEmailInput);
-        TextView title = (TextView) findViewById(R.id.SignUpTitle);
-        TextView signup = (TextView) findViewById(R.id.SignUpTextDivider);
-        TextView name = (TextView) findViewById(R.id.SignUpNameText);
-        TextView email = (TextView) findViewById(R.id.SignUpNameEmail);
-        TextView pass = (TextView) findViewById(R.id.SignUpNamePassword);
-        Button b = (Button) findViewById(R.id.SignUpSubmit);
-        dropdown = (Spinner)findViewById(R.id.SettingsChangeHighSchool);
+        dropdown = (Spinner)findViewById(R.id.SignUpHighSchool);
         String[] items = new String[]{"Select from Available High Schools", "Homestead High School"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
-        /*Typeface type = Typeface.createFromAsset(getAssets(),"Raleway.ttf");
-        Password.setTypeface(type);
-        ConfirmPassword.setTypeface(type);
-        FullName.setTypeface(type);
-        Email.setTypeface(type);
-        title.setTypeface(type);
-        signup.setTypeface(type);
-        name.setTypeface(type);
-        email.setTypeface(type);
-        pass.setTypeface(type);
-        b.setTypeface(type);*/
     }
 
     public void nextScreen() {
@@ -98,6 +82,8 @@ public class Signup extends Activity {
                                         myFirebaseRef.child("users").child(authData.getUid()).child("full_name")
                                                 .setValue(FirstName.getText().toString() + " " + LastName.getText().toString());
                                         myFirebaseRef.child("users").child(authData.getUid()).child("email")
+                                                .setValue(Email.getText().toString());
+                                        myFirebaseRef.child("users").child(authData.getUid()).child("school")
                                                 .setValue(Email.getText().toString());
 
                                         Toast.makeText(Signup.this, "Success, your account was made!",
@@ -150,5 +136,13 @@ public class Signup extends Activity {
         return false;
     }
 
+    public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+        if (position > 0) {
+            school = parent.getItemAtPosition(position).toString();
+        }
+    }
 
+    public void onNothingSelected(AdapterView<?> arg0) {
+
+    }
 }

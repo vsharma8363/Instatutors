@@ -84,27 +84,29 @@ public class MainActivity extends FragmentActivity{
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     for (DataSnapshot child : dataSnapshot.getChildren()) {
-                        ArrayList<String> tutorMath = child.child("mathSubjects").getValue(ArrayList.class);
-                        ArrayList<String> tutorScience = child.child("scienceSubjects").getValue(ArrayList.class);
-                        ArrayList<String> tutorLiberal = child.child("liberalSubjects").getValue(ArrayList.class);
-                        int tempCount = 0;
-                        for (String s : mathSubjects) {
-                            if (tutorMath.contains(s)) {
-                                tempCount++;
+                        if (child.child("school").getValue(String.class).equals(highSchool)) {
+                            ArrayList<String> tutorMath = child.child("mathSubjects").getValue(ArrayList.class);
+                            ArrayList<String> tutorScience = child.child("scienceSubjects").getValue(ArrayList.class);
+                            ArrayList<String> tutorLiberal = child.child("liberalSubjects").getValue(ArrayList.class);
+                            int tempCount = 0;
+                            for (String s : mathSubjects) {
+                                if (tutorMath.contains(s)) {
+                                    tempCount++;
+                                }
                             }
-                        }
-                        for (String s : scienceSubjects) {
-                            if (tutorScience.contains(s)) {
-                                tempCount++;
+                            for (String s : scienceSubjects) {
+                                if (tutorScience.contains(s)) {
+                                    tempCount++;
+                                }
                             }
-                        }
-                        for (String s : liberalSubjects) {
-                            if (tutorLiberal.contains(s)) {
-                                tempCount++;
+                            for (String s : liberalSubjects) {
+                                if (tutorLiberal.contains(s)) {
+                                    tempCount++;
+                                }
                             }
-                        }
-                        if (tempCount > 0) {
-                            tutors.add(child.getKey());
+                            if (tempCount > 0) {
+                                tutors.add(child.getKey());
+                            }
                         }
                     }
                     //Log.d("LOOKE", tutors.size()+"");

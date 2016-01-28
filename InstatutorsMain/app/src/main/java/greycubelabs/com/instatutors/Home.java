@@ -23,6 +23,9 @@ public class Home extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        Intent i = getIntent();
+        s = i.getStringExtra("id");
+
         name = (TextView) findViewById(R.id.HomeName);
         school = (TextView) findViewById(R.id.HomeSchool);
 
@@ -32,7 +35,7 @@ public class Home extends Activity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 name.setText(dataSnapshot.child("full_name").getValue(String.class));
-                school.setText(dataSnapshot.child("full_name").getValue(String.class));
+                school.setText(dataSnapshot.child("school").getValue(String.class));
             }
 
             @Override
@@ -40,9 +43,6 @@ public class Home extends Activity {
 
             }
         });
-
-        Intent i = getIntent();
-        s = i.getStringExtra("id");
     }
 
     public void startDrawer(View view) {
